@@ -86,9 +86,9 @@ class DatabaseSeeder extends Seeder
         foreach ($date_time_formats as $date_time_format) {
             Date_time_format::create(['format' => $date_time_format]);
         }
-        NotificationType::create(['id' => '1', 'message' => 'A new user is registered', 'type' => 'registration', 'icon_class' => 'fa fa-user']);
-        NotificationType::create(['id' => '2', 'message' => 'You have a new reply on this ticket', 'type' => 'reply', 'icon_class' => 'fa fa-envelope']);
-        NotificationType::create(['id' => '3', 'message' => 'A new ticket has been created', 'type' => 'new_ticket', 'icon_class' => 'fa fa-envelope']);
+        NotificationType::create(['id' => '1', 'message' => 'Un nuevo usuario se ha registrado', 'type' => 'registration', 'icon_class' => 'fa fa-user']);
+        NotificationType::create(['id' => '2', 'message' => 'Tienes una nueva respuesta en este ticket', 'type' => 'reply', 'icon_class' => 'fa fa-envelope']);
+        NotificationType::create(['id' => '3', 'message' => 'Un nuevo ticket ha sido creado', 'type' => 'new_ticket', 'icon_class' => 'fa fa-envelope']);
         WorkflowClose::create(['id' => '1', 'days' => '2', 'condition' => '1', 'send_email' => '1', 'status' => '3']);
 
         /* Date format */
@@ -228,13 +228,13 @@ class DatabaseSeeder extends Seeder
             Timezones::create(['name' => $name, 'location' => $location]);
         }
         /* Ticket status */
-        Ticket_status::create(['name' => 'Open', 'state' => 'open', 'mode' => '3', 'message' => 'Ticket have been Reopened by', 'flags' => '0', 'sort' => '1', 'properties' => 'Open tickets.']);
-        Ticket_status::create(['name' => 'Resolved', 'state' => 'closed', 'mode' => '1', 'message' => 'Ticket have been Resolved by', 'flags' => '0', 'sort' => '2', 'properties' => 'Resolved tickets.']);
-        Ticket_status::create(['name' => 'Closed', 'state' => 'closed', 'mode' => '3', 'message' => 'Ticket have been Closed by', 'flags' => '0', 'sort' => '3', 'properties' => 'Closed tickets. Tickets will still be accessible on client and staff panels.']);
-        Ticket_status::create(['name' => 'Archived', 'state' => 'archived', 'mode' => '3', 'message' => 'Ticket have been Archived by', 'flags' => '0', 'sort' => '4', 'properties' => 'Tickets only adminstratively available but no longer accessible on ticket queues and client panel.']);
-        Ticket_status::create(['name' => 'Deleted', 'state' => 'deleted', 'mode' => '3', 'message' => 'Ticket have been Deleted by', 'flags' => '0', 'sort' => '5', 'properties' => 'Tickets queued for deletion. Not accessible on ticket queues.']);
-        Ticket_status::create(['name' => 'Unverified', 'state' => 'unverified', 'mode' => '3', 'message' => 'User account verification required.', 'flags' => '0', 'sort' => '6', 'properties' => 'Ticket will be open after user verifies his/her account.']);
-        Ticket_status::create(['name' => 'Request Approval', 'state' => 'unverified', 'mode' => '3', 'message' => 'Approval requested by', 'flags' => '0', 'sort' => '7', 'properties' => 'Ticket will be approve  after Admin verifies  this ticket']);
+        Ticket_status::create(['name' => 'Open', 'state' => 'open', 'mode' => '3', 'message' => 'Los tickets han sido reabiertos por', 'flags' => '0', 'sort' => '1', 'properties' => 'Tickets abiertos.']);
+        Ticket_status::create(['name' => 'Resolved', 'state' => 'closed', 'mode' => '1', 'message' => 'El ticket ha sido resuelto por', 'flags' => '0', 'sort' => '2', 'properties' => 'Tickets resueltos.']);
+        Ticket_status::create(['name' => 'Closed', 'state' => 'closed', 'mode' => '3', 'message' => 'El ticket ha sido cerrado por', 'flags' => '0', 'sort' => '3', 'properties' => 'Tickets cerrados. Los tickets seguirán siendo accesibles en los paneles del cliente y del personal.']);
+        Ticket_status::create(['name' => 'Archived', 'state' => 'archived', 'mode' => '3', 'message' => 'El ticket ha sido archivado por', 'flags' => '0', 'sort' => '4', 'properties' => 'Tickets solo disponibles administrativamente pero ya no accesibles en las colas de tickets y en el panel del cliente.']);
+        Ticket_status::create(['name' => 'Deleted', 'state' => 'deleted', 'mode' => '3', 'message' => 'El ticket ha sido eliminado por', 'flags' => '0', 'sort' => '5', 'properties' => 'Tickets en cola para eliminación. No accesibles en las colas de tickets.']);
+        Ticket_status::create(['name' => 'Unverified', 'state' => 'unverified', 'mode' => '3', 'message' => 'Se requiere verificación de la cuenta del usuario.', 'flags' => '0', 'sort' => '6', 'properties' => 'El ticket estará abierto después de que el usuario verifique su cuenta.']);
+        Ticket_status::create(['name' => 'Request Approval', 'state' => 'unverified', 'mode' => '3', 'message' => 'Aprovacion solicitada por', 'flags' => '0', 'sort' => '7', 'properties' => 'Tickets en espera de aprobación. El ticket estará abierto después de que el usuario apruebe su cuenta.']);
 
         /* Ticket priority */
         Ticket_priority::create(['priority' => 'Low', 'status' => 1, 'priority_desc' => 'Low', 'priority_color' => '#00a65a', 'priority_urgency' => '4', 'ispublic' => '1']);
@@ -347,8 +347,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '213', ]);
         CountryCode::create(['id' => '4',
             'iso'                 => 'AS',
-            'name'                => 'AMERICAN SAMOA',
-            'nicename'            => 'American Samoa',
+            'name'                => 'AMERICA SAMOA',
+            'nicename'            => 'America Samoa',
             'iso3'                => 'ASM',
             'numcode'             => '16',
             'phonecode'           => '1684', ]);
@@ -382,8 +382,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '0', ]);
         CountryCode::create(['id' => '9',
             'iso'                 => 'AG',
-            'name'                => 'ANTIGUA AND BARBUDA',
-            'nicename'            => 'Antigua and Barbuda',
+            'name'                => 'ANTIGUA Y BARBUDA',
+            'nicename'            => 'Antigua y Barbuda',
             'iso3'                => 'ATG',
             'numcode'             => '28',
             'phonecode'           => '1268', ]);
@@ -466,8 +466,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '375', ]);
         CountryCode::create(['id' => '21',
             'iso'                 => 'BE',
-            'name'                => 'BELGIUM',
-            'nicename'            => 'Belgium',
+            'name'                => 'BELGICA',
+            'nicename'            => 'Belgica',
             'iso3'                => 'BEL',
             'numcode'             => '56',
             'phonecode'           => '32', ]);
@@ -508,8 +508,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '591', ]);
         CountryCode::create(['id' => '27',
             'iso'                 => 'BA',
-            'name'                => 'BOSNIA AND HERZEGOVINA',
-            'nicename'            => 'Bosnia and Herzegovina',
+            'name'                => 'BOSNIA Y HERZEGOVINA',
+            'nicename'            => 'Bosnia y Herzegovina',
             'iso3'                => 'BIH',
             'numcode'             => '70',
             'phonecode'           => '387', ]);
@@ -522,8 +522,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '267', ]);
         CountryCode::create(['id' => '29',
             'iso'                 => 'BV',
-            'name'                => 'BOUVET ISLAND',
-            'nicename'            => 'Bouvet Island',
+            'name'                => 'ISLA BOUVET',
+            'nicename'            => 'Isla Bouvet',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '0', ]);
@@ -536,8 +536,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '55', ]);
         CountryCode::create(['id' => '31',
             'iso'                 => 'IO',
-            'name'                => 'BRITISH INDIAN OCEAN TERRITORY',
-            'nicename'            => 'British Indian Ocean Territory',
+            'name'                => 'TERRITORIO BRITANICO DEL OCEANO INDICO',
+            'nicename'            => 'Territorio Britanico del Oceano Indico',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '246', ]);
@@ -592,22 +592,22 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '1', ]);
         CountryCode::create(['id' => '39',
             'iso'                 => 'CV',
-            'name'                => 'CAPE VERDE',
-            'nicename'            => 'Cape Verde',
+            'name'                => 'CABO VERDE',
+            'nicename'            => 'Cabo Verde',
             'iso3'                => 'CPV',
             'numcode'             => '132',
             'phonecode'           => '238', ]);
         CountryCode::create(['id' => '40',
             'iso'                 => 'KY',
-            'name'                => 'CAYMAN ISLANDS',
-            'nicename'            => 'Cayman Islands',
+            'name'                => 'ISLAS CAYMAN',
+            'nicename'            => 'Islas Cayman',
             'iso3'                => 'CYM',
             'numcode'             => '136',
             'phonecode'           => '1345', ]);
         CountryCode::create(['id' => '41',
             'iso'                 => 'CF',
-            'name'                => 'CENTRAL AFRICAN REPUBLIC',
-            'nicename'            => 'Central African Republic',
+            'name'                => 'REPUBLICA CENTROAFRICANA',
+            'nicename'            => 'Republica Centroafricana',
             'iso3'                => 'CAF',
             'numcode'             => '140',
             'phonecode'           => '236', ]);
@@ -634,15 +634,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '86', ]);
         CountryCode::create(['id' => '45',
             'iso'                 => 'CX',
-            'name'                => 'CHRISTMAS ISLAND',
-            'nicename'            => 'Christmas Island',
+            'name'                => 'ISLA DE NAVIDAD',
+            'nicename'            => 'Isla de Navidad',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '61', ]);
         CountryCode::create(['id' => '46',
             'iso'                 => 'CC',
-            'name'                => 'COCOS (KEELING) ISLANDS',
-            'nicename'            => 'Cocos (Keeling) Islands',
+            'name'                => 'ISLAS (KEELING) COCOS',
+            'nicename'            => 'Islas (Keeling) Cocos',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '672', ]);
@@ -669,15 +669,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '242', ]);
         CountryCode::create(['id' => '50',
             'iso'                 => 'CD',
-            'name'                => 'CONGO, THE DEMOCRATIC REPUBLIC OF THE',
-            'nicename'            => 'Congo, the Democratic Republic of the',
+            'name'                => 'LA REPUBLICA DEMOCRATICA DEL CONGO',
+            'nicename'            => 'La Republica Democratica del Congo',
             'iso3'                => 'COD',
             'numcode'             => '180',
             'phonecode'           => '242', ]);
         CountryCode::create(['id' => '51',
             'iso'                 => 'CK',
-            'name'                => 'COOK ISLANDS',
-            'nicename'            => 'Cook Islands',
+            'name'                => 'ISLAS COOK',
+            'nicename'            => 'Islas Cook',
             'iso3'                => 'COK',
             'numcode'             => '184',
             'phonecode'           => '682', ]);
@@ -697,8 +697,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '225', ]);
         CountryCode::create(['id' => '54',
             'iso'                 => 'HR',
-            'name'                => 'CROATIA',
-            'nicename'            => 'Croatia',
+            'name'                => 'CROACIA',
+            'nicename'            => 'Croacia',
             'iso3'                => 'HRV',
             'numcode'             => '191',
             'phonecode'           => '385', ]);
@@ -718,8 +718,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '357', ]);
         CountryCode::create(['id' => '57',
             'iso'                 => 'CZ',
-            'name'                => 'CZECH REPUBLIC',
-            'nicename'            => 'Czech Republic',
+            'name'                => 'REPUBLICA CHECA',
+            'nicename'            => 'Republica Checa',
             'iso3'                => 'CZE',
             'numcode'             => '203',
             'phonecode'           => '420', ]);
@@ -746,8 +746,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '1767', ]);
         CountryCode::create(['id' => '61',
             'iso'                 => 'DO',
-            'name'                => 'DOMINICAN REPUBLIC',
-            'nicename'            => 'Dominican Republic',
+            'name'                => 'REPUBLICA DOMINICANA',
+            'nicename'            => 'Republica Dominicana',
             'iso3'                => 'DOM',
             'numcode'             => '214',
             'phonecode'           => '1809', ]);
@@ -760,8 +760,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '593', ]);
         CountryCode::create(['id' => '63',
             'iso'                 => 'EG',
-            'name'                => 'EGYPT',
-            'nicename'            => 'Egypt',
+            'name'                => 'EGIPTO',
+            'nicename'            => 'Egipto',
             'iso3'                => 'EGY',
             'numcode'             => '818',
             'phonecode'           => '20', ]);
@@ -774,8 +774,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '503', ]);
         CountryCode::create(['id' => '65',
             'iso'                 => 'GQ',
-            'name'                => 'EQUATORIAL GUINEA',
-            'nicename'            => 'Equatorial Guinea',
+            'name'                => 'GUINEA ECUATORIAL',
+            'nicename'            => 'Guinea Ecuatorial',
             'iso3'                => 'GNQ',
             'numcode'             => '226',
             'phonecode'           => '240', ]);
@@ -802,15 +802,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '251', ]);
         CountryCode::create(['id' => '69',
             'iso'                 => 'FK',
-            'name'                => 'FALKLAND ISLANDS (MALVINAS)',
-            'nicename'            => 'Falkland Islands (Malvinas)',
+            'name'                => 'ISLAS MALVINAS (FALKLAND ISLANDS)',
+            'nicename'            => 'Islas Malvinas (Falkland Islands)',
             'iso3'                => 'FLK',
             'numcode'             => '238',
             'phonecode'           => '500', ]);
         CountryCode::create(['id' => '70',
             'iso'                 => 'FO',
-            'name'                => 'FAROE ISLANDS',
-            'nicename'            => 'Faroe Islands',
+            'name'                => 'ISLAS FEROE',
+            'nicename'            => 'Islas Feroe',
             'iso3'                => 'FRO',
             'numcode'             => '234',
             'phonecode'           => '298', ]);
@@ -823,36 +823,36 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '679', ]);
         CountryCode::create(['id' => '72',
             'iso'                 => 'FI',
-            'name'                => 'FINLAND',
-            'nicename'            => 'Finland',
+            'name'                => 'FINLANDIA',
+            'nicename'            => 'Finlandia',
             'iso3'                => 'FIN',
             'numcode'             => '246',
             'phonecode'           => '358', ]);
         CountryCode::create(['id' => '73',
             'iso'                 => 'FR',
-            'name'                => 'FRANCE',
-            'nicename'            => 'France',
+            'name'                => 'FRANCIA',
+            'nicename'            => 'Francia',
             'iso3'                => 'FRA',
             'numcode'             => '250',
             'phonecode'           => '33', ]);
         CountryCode::create(['id' => '74',
             'iso'                 => 'GF',
-            'name'                => 'FRENCH GUIANA',
-            'nicename'            => 'French Guiana',
+            'name'                => 'GUAYANA FRANCESA',
+            'nicename'            => 'Guayana Francesa',
             'iso3'                => 'GUF',
             'numcode'             => '254',
             'phonecode'           => '594', ]);
         CountryCode::create(['id' => '75',
             'iso'                 => 'PF',
-            'name'                => 'FRENCH POLYNESIA',
-            'nicename'            => 'French Polynesia',
+            'name'                => 'POLINESIA FRANCESA',
+            'nicename'            => 'Polinesia Francesa',
             'iso3'                => 'PYF',
             'numcode'             => '258',
             'phonecode'           => '689', ]);
         CountryCode::create(['id' => '76',
             'iso'                 => 'TF',
-            'name'                => 'FRENCH SOUTHERN TERRITORIES',
-            'nicename'            => 'French Southern Territories',
+            'name'                => 'TERRITORIOS FRANCES DEL SUR',
+            'nicename'            => 'Territorios Franceses del Sur',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '0', ]);
@@ -879,8 +879,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '995', ]);
         CountryCode::create(['id' => '80',
             'iso'                 => 'DE',
-            'name'                => 'GERMANY',
-            'nicename'            => 'Germany',
+            'name'                => 'ALEMANIA',
+            'nicename'            => 'Alemania',
             'iso3'                => 'DEU',
             'numcode'             => '276',
             'phonecode'           => '49', ]);
@@ -900,29 +900,29 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '350', ]);
         CountryCode::create(['id' => '83',
             'iso'                 => 'GR',
-            'name'                => 'GREECE',
-            'nicename'            => 'Greece',
+            'name'                => 'GRECIA',
+            'nicename'            => 'Grecia',
             'iso3'                => 'GRC',
             'numcode'             => '300',
             'phonecode'           => '30', ]);
         CountryCode::create(['id' => '84',
             'iso'                 => 'GL',
-            'name'                => 'GREENLAND',
-            'nicename'            => 'Greenland',
+            'name'                => 'GROENLANDIA',
+            'nicename'            => 'Groenlandia',
             'iso3'                => 'GRL',
             'numcode'             => '304',
             'phonecode'           => '299', ]);
         CountryCode::create(['id' => '85',
             'iso'                 => 'GD',
-            'name'                => 'GRENADA',
-            'nicename'            => 'Grenada',
+            'name'                => 'GRANADA',
+            'nicename'            => 'Granada',
             'iso3'                => 'GRD',
             'numcode'             => '308',
             'phonecode'           => '1473', ]);
         CountryCode::create(['id' => '86',
             'iso'                 => 'GP',
-            'name'                => 'GUADELOUPE',
-            'nicename'            => 'Guadeloupe',
+            'name'                => 'GUADALUPE',
+            'nicename'            => 'Guadalupe',
             'iso3'                => 'GLP',
             'numcode'             => '312',
             'phonecode'           => '590', ]);
@@ -970,15 +970,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '509', ]);
         CountryCode::create(['id' => '93',
             'iso'                 => 'HM',
-            'name'                => 'HEARD ISLAND AND MCDONALD ISLANDS',
-            'nicename'            => 'Heard Island and Mcdonald Islands',
+            'name'                => 'ISLAS HEARD Y MCDONALD',
+            'nicename'            => 'Islas Heard y Mcdonald',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '0', ]);
         CountryCode::create(['id' => '94',
             'iso'                 => 'VA',
-            'name'                => 'HOLY SEE (VATICAN CITY STATE)',
-            'nicename'            => 'Holy See (Vatican City State)',
+            'name'                => 'SANTO VATICANO (ESTADO DE LA CIUDAD DEL VATICANO)',
+            'nicename'            => 'Santo Vaticano (Estado de la Ciudad del Vaticano)',
             'iso3'                => 'VAT',
             'numcode'             => '336',
             'phonecode'           => '39', ]);
@@ -998,15 +998,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '852', ]);
         CountryCode::create(['id' => '97',
             'iso'                 => 'HU',
-            'name'                => 'HUNGARY',
-            'nicename'            => 'Hungary',
+            'name'                => 'HUNGRIA',
+            'nicename'            => 'Hungria',
             'iso3'                => 'HUN',
             'numcode'             => '348',
             'phonecode'           => '36', ]);
         CountryCode::create(['id' => '98',
             'iso'                 => 'IS',
-            'name'                => 'ICELAND',
-            'nicename'            => 'Iceland',
+            'name'                => 'ISLANDIA',
+            'nicename'            => 'Islandia',
             'iso3'                => 'ISL',
             'numcode'             => '352',
             'phonecode'           => '354', ]);
@@ -1026,8 +1026,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '62', ]);
         CountryCode::create(['id' => '101',
             'iso'                 => 'IR',
-            'name'                => 'IRAN, ISLAMIC REPUBLIC OF',
-            'nicename'            => 'Iran, Islamic Republic of',
+            'name'                => 'REPUBLICA ISLAMICA DEL IRAN',
+            'nicename'            => 'Republica Islamica del Iran',
             'iso3'                => 'IRN',
             'numcode'             => '364',
             'phonecode'           => '98', ]);
@@ -1040,8 +1040,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '964', ]);
         CountryCode::create(['id' => '103',
             'iso'                 => 'IE',
-            'name'                => 'IRELAND',
-            'nicename'            => 'Ireland',
+            'name'                => 'IRLANDA',
+            'nicename'            => 'Irlanda',
             'iso3'                => 'IRL',
             'numcode'             => '372',
             'phonecode'           => '353', ]);
@@ -1054,8 +1054,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '972', ]);
         CountryCode::create(['id' => '105',
             'iso'                 => 'IT',
-            'name'                => 'ITALY',
-            'nicename'            => 'Italy',
+            'name'                => 'ITALIA',
+            'nicename'            => 'Italia',
             'iso3'                => 'ITA',
             'numcode'             => '380',
             'phonecode'           => '39', ]);
@@ -1068,15 +1068,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '1876', ]);
         CountryCode::create(['id' => '107',
             'iso'                 => 'JP',
-            'name'                => 'JAPAN',
-            'nicename'            => 'Japan',
+            'name'                => 'JAPON',
+            'nicename'            => 'Japon',
             'iso3'                => 'JPN',
             'numcode'             => '392',
             'phonecode'           => '81', ]);
         CountryCode::create(['id' => '108',
             'iso'                 => 'JO',
-            'name'                => 'JORDAN',
-            'nicename'            => 'Jordan',
+            'name'                => 'JORDANIA',
+            'nicename'            => 'Jordania',
             'iso3'                => 'JOR',
             'numcode'             => '400',
             'phonecode'           => '962', ]);
@@ -1103,15 +1103,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '686', ]);
         CountryCode::create(['id' => '112',
             'iso'                 => 'KP',
-            'name'                => 'KOREA, DEMOCRATIC PEOPLES REPUBLIC OF',
-            'nicename'            => 'Korea, Democratic Peoples Republic of',
+            'name'                => 'REPUBLICA POPULAR DEMOCRATICA DE COREA',
+            'nicename'            => 'Republica Popular Democratica de Corea',
             'iso3'                => 'PRK',
             'numcode'             => '408',
             'phonecode'           => '850', ]);
         CountryCode::create(['id' => '113',
             'iso'                 => 'KR',
-            'name'                => 'KOREA, REPUBLIC OF',
-            'nicename'            => 'Korea, Republic of',
+            'name'                => 'REPUBLICA DE COREA',
+            'nicename'            => 'Republica de Corea',
             'iso3'                => 'KOR',
             'numcode'             => '410',
             'phonecode'           => '82', ]);
@@ -1131,8 +1131,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '996', ]);
         CountryCode::create(['id' => '116',
             'iso'                 => 'LA',
-            'name'                => 'LAO PEOPLES DEMOCRATIC REPUBLIC',
-            'nicename'            => 'Lao Peoples Democratic Republic',
+            'name'                => 'REPUBLICA DEMOCRATICA POPULAR LAO',
+            'nicename'            => 'Republica Democratica Popular Lao',
             'iso3'                => 'LAO',
             'numcode'             => '418',
             'phonecode'           => '856', ]);
@@ -1180,15 +1180,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '423', ]);
         CountryCode::create(['id' => '123',
             'iso'                 => 'LT',
-            'name'                => 'LITHUANIA',
-            'nicename'            => 'Lithuania',
+            'name'                => 'LITUAIA',
+            'nicename'            => 'Lituania',
             'iso3'                => 'LTU',
             'numcode'             => '440',
             'phonecode'           => '370', ]);
         CountryCode::create(['id' => '124',
             'iso'                 => 'LU',
-            'name'                => 'LUXEMBOURG',
-            'nicename'            => 'Luxembourg',
+            'name'                => 'LUXEMBURGO',
+            'nicename'            => 'Luxemburgo',
             'iso3'                => 'LUX',
             'numcode'             => '442',
             'phonecode'           => '352', ]);
@@ -1201,8 +1201,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '853', ]);
         CountryCode::create(['id' => '126',
             'iso'                 => 'MK',
-            'name'                => 'MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF',
-            'nicename'            => 'Macedonia, the Former Yugoslav Republic of',
+            'name'                => 'REPUBLICA DE MACEDONIA',
+            'nicename'            => 'Republica de Macedonia',
             'iso3'                => 'MKD',
             'numcode'             => '807',
             'phonecode'           => '389', ]);
@@ -1222,15 +1222,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '265', ]);
         CountryCode::create(['id' => '129',
             'iso'                 => 'MY',
-            'name'                => 'MALAYSIA',
-            'nicename'            => 'Malaysia',
+            'name'                => 'MALASIA',
+            'nicename'            => 'Malasia',
             'iso3'                => 'MYS',
             'numcode'             => '458',
             'phonecode'           => '60', ]);
         CountryCode::create(['id' => '130',
             'iso'                 => 'MV',
-            'name'                => 'MALDIVES',
-            'nicename'            => 'Maldives',
+            'name'                => 'MALDIVAS',
+            'nicename'            => 'Maldivas',
             'iso3'                => 'MDV',
             'numcode'             => '462',
             'phonecode'           => '960', ]);
@@ -1250,15 +1250,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '356', ]);
         CountryCode::create(['id' => '133',
             'iso'                 => 'MH',
-            'name'                => 'MARSHALL ISLANDS',
-            'nicename'            => 'Marshall Islands',
+            'name'                => 'ISLAS MARSHALL',
+            'nicename'            => 'Islas Marshall',
             'iso3'                => 'MHL',
             'numcode'             => '584',
             'phonecode'           => '692', ]);
         CountryCode::create(['id' => '134',
             'iso'                 => 'MQ',
-            'name'                => 'MARTINIQUE',
-            'nicename'            => 'Martinique',
+            'name'                => 'MARTINICA',
+            'nicename'            => 'Martinica',
             'iso3'                => 'MTQ',
             'numcode'             => '474',
             'phonecode'           => '596', ]);
@@ -1271,8 +1271,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '222', ]);
         CountryCode::create(['id' => '136',
             'iso'                 => 'MU',
-            'name'                => 'MAURITIUS',
-            'nicename'            => 'Mauritius',
+            'name'                => 'MAURICIO',
+            'nicename'            => 'Mauricio',
             'iso3'                => 'MUS',
             'numcode'             => '480',
             'phonecode'           => '230', ]);
@@ -1292,15 +1292,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '52', ]);
         CountryCode::create(['id' => '139',
             'iso'                 => 'FM',
-            'name'                => 'MICRONESIA, FEDERATED STATES OF',
-            'nicename'            => 'Micronesia, Federated States of',
+            'name'                => 'ESTADOS FEDERADOS DE MICRONESIA',
+            'nicename'            => 'Estados Federados de Micronesia',
             'iso3'                => 'FSM',
             'numcode'             => '583',
             'phonecode'           => '691', ]);
         CountryCode::create(['id' => '140',
             'iso'                 => 'MD',
-            'name'                => 'MOLDOVA, REPUBLIC OF',
-            'nicename'            => 'Moldova, Republic of',
+            'name'                => 'REPUBLICA DE MOLDOVA',
+            'nicename'            => 'Republica de Moldova',
             'iso3'                => 'MDA',
             'numcode'             => '498',
             'phonecode'           => '373', ]);
@@ -1327,8 +1327,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '1664', ]);
         CountryCode::create(['id' => '144',
             'iso'                 => 'MA',
-            'name'                => 'MOROCCO',
-            'nicename'            => 'Morocco',
+            'name'                => 'MARRUECOS',
+            'nicename'            => 'Marruecos',
             'iso3'                => 'MAR',
             'numcode'             => '504',
             'phonecode'           => '212', ]);
@@ -1369,29 +1369,29 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '977', ]);
         CountryCode::create(['id' => '150',
             'iso'                 => 'NL',
-            'name'                => 'NETHERLANDS',
-            'nicename'            => 'Netherlands',
+            'name'                => 'PAISES BAJOS',
+            'nicename'            => 'Paises Bajos',
             'iso3'                => 'NLD',
             'numcode'             => '528',
             'phonecode'           => '31', ]);
         CountryCode::create(['id' => '151',
             'iso'                 => 'AN',
-            'name'                => 'NETHERLANDS ANTILLES',
-            'nicename'            => 'Netherlands Antilles',
+            'name'                => 'ANTILLAS NEERLANDES',
+            'nicename'            => 'Antillas Neerlandes',
             'iso3'                => 'ANT',
             'numcode'             => '530',
             'phonecode'           => '599', ]);
         CountryCode::create(['id' => '152',
             'iso'                 => 'NC',
-            'name'                => 'NEW CALEDONIA',
-            'nicename'            => 'New Caledonia',
+            'name'                => 'NUEVA CALEDONIA',
+            'nicename'            => 'Nueva Caledonia',
             'iso3'                => 'NCL',
             'numcode'             => '540',
             'phonecode'           => '687', ]);
         CountryCode::create(['id' => '153',
             'iso'                 => 'NZ',
-            'name'                => 'NEW ZEALAND',
-            'nicename'            => 'New Zealand',
+            'name'                => 'NUEVA ZELANDA',
+            'nicename'            => 'Nueva Zelanda',
             'iso3'                => 'NZL',
             'numcode'             => '554',
             'phonecode'           => '64', ]);
@@ -1425,22 +1425,22 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '683', ]);
         CountryCode::create(['id' => '158',
             'iso'                 => 'NF',
-            'name'                => 'NORFOLK ISLAND',
-            'nicename'            => 'Norfolk Island',
+            'name'                => 'ISLA NORFOLK',
+            'nicename'            => 'Isla Norfolk',
             'iso3'                => 'NFK',
             'numcode'             => '574',
             'phonecode'           => '672', ]);
         CountryCode::create(['id' => '159',
             'iso'                 => 'MP',
-            'name'                => 'NORTHERN MARIANA ISLANDS',
-            'nicename'            => 'Northern Mariana Islands',
+            'name'                => 'ISLAS MARIANAS DEL NORTE',
+            'nicename'            => 'Islas Marianas del Norte',
             'iso3'                => 'MNP',
             'numcode'             => '580',
             'phonecode'           => '1670', ]);
         CountryCode::create(['id' => '160',
             'iso'                 => 'NO',
-            'name'                => 'NORWAY',
-            'nicename'            => 'Norway',
+            'name'                => 'NORUEGA',
+            'nicename'            => 'Noruega',
             'iso3'                => 'NOR',
             'numcode'             => '578',
             'phonecode'           => '47', ]);
@@ -1467,8 +1467,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '680', ]);
         CountryCode::create(['id' => '164',
             'iso'                 => 'PS',
-            'name'                => 'PALESTINIAN TERRITORY, OCCUPIED',
-            'nicename'            => 'Palestinian Territory, Occupied',
+            'name'                => 'TERRITORIO PALESTINO OCUPADO',
+            'nicename'            => 'Territorio Palestino Ocupado',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '970', ]);
@@ -1481,8 +1481,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '507', ]);
         CountryCode::create(['id' => '166',
             'iso'                 => 'PG',
-            'name'                => 'PAPUA NEW GUINEA',
-            'nicename'            => 'Papua New Guinea',
+            'name'                => 'PAPUA NUEVA GUINEA',
+            'nicename'            => 'Papua Nueva Guinea',
             'iso3'                => 'PNG',
             'numcode'             => '598',
             'phonecode'           => '675', ]);
@@ -1502,8 +1502,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '51', ]);
         CountryCode::create(['id' => '169',
             'iso'                 => 'PH',
-            'name'                => 'PHILIPPINES',
-            'nicename'            => 'Philippines',
+            'name'                => 'FILIPINAS',
+            'nicename'            => 'Filipinas',
             'iso3'                => 'PHL',
             'numcode'             => '608',
             'phonecode'           => '63', ]);
@@ -1516,8 +1516,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '0', ]);
         CountryCode::create(['id' => '171',
             'iso'                 => 'PL',
-            'name'                => 'POLAND',
-            'nicename'            => 'Poland',
+            'name'                => 'POLONIA',
+            'nicename'            => 'Polonia',
             'iso3'                => 'POL',
             'numcode'             => '616',
             'phonecode'           => '48', ]);
@@ -1558,50 +1558,50 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '40', ]);
         CountryCode::create(['id' => '177',
             'iso'                 => 'RU',
-            'name'                => 'RUSSIAN FEDERATION',
-            'nicename'            => 'Russian Federation',
+            'name'                => 'FEDERACION DE RUSIA',
+            'nicename'            => 'Federacion de Rusia',
             'iso3'                => 'RUS',
             'numcode'             => '643',
             'phonecode'           => '70', ]);
         CountryCode::create(['id' => '178',
             'iso'                 => 'RW',
-            'name'                => 'RWANDA',
-            'nicename'            => 'Rwanda',
+            'name'                => 'RUANDA',
+            'nicename'            => 'Ruanda',
             'iso3'                => 'RWA',
             'numcode'             => '646',
             'phonecode'           => '250', ]);
         CountryCode::create(['id' => '179',
             'iso'                 => 'SH',
-            'name'                => 'SAINT HELENA',
-            'nicename'            => 'Saint Helena',
+            'name'                => 'SANTA ELENA',
+            'nicename'            => 'Santa Elena',
             'iso3'                => 'SHN',
             'numcode'             => '654',
             'phonecode'           => '290', ]);
         CountryCode::create(['id' => '180',
             'iso'                 => 'KN',
-            'name'                => 'SAINT KITTS AND NEVIS',
-            'nicename'            => 'Saint Kitts and Nevis',
+            'name'                => 'SAN CRISTOBAL Y NIEVES',
+            'nicename'            => 'San Cristobal y Nieves',
             'iso3'                => 'KNA',
             'numcode'             => '659',
             'phonecode'           => '1869', ]);
         CountryCode::create(['id' => '181',
             'iso'                 => 'LC',
-            'name'                => 'SAINT LUCIA',
-            'nicename'            => 'Saint Lucia',
+            'name'                => 'SANTA LUCIA',
+            'nicename'            => 'Santa Lucia',
             'iso3'                => 'LCA',
             'numcode'             => '662',
             'phonecode'           => '1758', ]);
         CountryCode::create(['id' => '182',
             'iso'                 => 'PM',
-            'name'                => 'SAINT PIERRE AND MIQUELON',
-            'nicename'            => 'Saint Pierre and Miquelon',
+            'name'                => 'SANTA PIERRE Y MIQUELON',
+            'nicename'            => 'Santa Pierre y Miquelon',
             'iso3'                => 'SPM',
             'numcode'             => '666',
             'phonecode'           => '508', ]);
         CountryCode::create(['id' => '183',
             'iso'                 => 'VC',
-            'name'                => 'SAINT VINCENT AND THE GRENADINES',
-            'nicename'            => 'Saint Vincent and the Grenadines',
+            'name'                => 'SAN VICENTE Y LAS GRANADINAS',
+            'nicename'            => 'San Vicente y las Granadinas',
             'iso3'                => 'VCT',
             'numcode'             => '670',
             'phonecode'           => '1784', ]);
@@ -1621,15 +1621,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '378', ]);
         CountryCode::create(['id' => '186',
             'iso'                 => 'ST',
-            'name'                => 'SAO TOME AND PRINCIPE',
-            'nicename'            => 'Sao Tome and Principe',
+            'name'                => 'SANTO TOME Y PRINCIPE',
+            'nicename'            => 'Santo Tome y Principe',
             'iso3'                => 'STP',
             'numcode'             => '678',
             'phonecode'           => '239', ]);
         CountryCode::create(['id' => '187',
             'iso'                 => 'SA',
-            'name'                => 'SAUDI ARABIA',
-            'nicename'            => 'Saudi Arabia',
+            'name'                => 'ARABIA SAUDITA',
+            'nicename'            => 'Arabia Saudita',
             'iso3'                => 'SAU',
             'numcode'             => '682',
             'phonecode'           => '966', ]);
@@ -1642,8 +1642,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '221', ]);
         CountryCode::create(['id' => '189',
             'iso'                 => 'CS',
-            'name'                => 'SERBIA AND MONTENEGRO',
-            'nicename'            => 'Serbia and Montenegro',
+            'name'                => 'SERBIA Y MONTENEGRO',
+            'nicename'            => 'Serbia y Montenegro',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '381', ]);
@@ -1656,36 +1656,36 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '248', ]);
         CountryCode::create(['id' => '191',
             'iso'                 => 'SL',
-            'name'                => 'SIERRA LEONE',
-            'nicename'            => 'Sierra Leone',
+            'name'                => 'SIERRA LEONA',
+            'nicename'            => 'Sierra Leona',
             'iso3'                => 'SLE',
             'numcode'             => '694',
             'phonecode'           => '232', ]);
         CountryCode::create(['id' => '192',
             'iso'                 => 'SG',
-            'name'                => 'SINGAPORE',
-            'nicename'            => 'Singapore',
+            'name'                => 'SINGAPUR',
+            'nicename'            => 'Singapur',
             'iso3'                => 'SGP',
             'numcode'             => '702',
             'phonecode'           => '65', ]);
         CountryCode::create(['id' => '193',
             'iso'                 => 'SK',
-            'name'                => 'SLOVAKIA',
-            'nicename'            => 'Slovakia',
+            'name'                => 'ESLOVAQUIA',
+            'nicename'            => 'Eslovaquia',
             'iso3'                => 'SVK',
             'numcode'             => '703',
             'phonecode'           => '421', ]);
         CountryCode::create(['id' => '194',
             'iso'                 => 'SI',
-            'name'                => 'SLOVENIA',
-            'nicename'            => 'Slovenia',
+            'name'                => 'ESLOVENIA',
+            'nicename'            => 'Eslovenia',
             'iso3'                => 'SVN',
             'numcode'             => '705',
             'phonecode'           => '386', ]);
         CountryCode::create(['id' => '195',
             'iso'                 => 'SB',
-            'name'                => 'SOLOMON ISLANDS',
-            'nicename'            => 'Solomon Islands',
+            'name'                => 'ISLAS SALOMON',
+            'nicename'            => 'Islas Salomon',
             'iso3'                => 'SLB',
             'numcode'             => '90',
             'phonecode'           => '677', ]);
@@ -1698,22 +1698,22 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '252', ]);
         CountryCode::create(['id' => '197',
             'iso'                 => 'ZA',
-            'name'                => 'SOUTH AFRICA',
-            'nicename'            => 'South Africa',
+            'name'                => 'SUDÁFRICA',
+            'nicename'            => 'Sudáfrica',
             'iso3'                => 'ZAF',
             'numcode'             => '710',
             'phonecode'           => '27', ]);
         CountryCode::create(['id' => '198',
             'iso'                 => 'GS',
-            'name'                => 'SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS',
-            'nicename'            => 'South Georgia and the South Sandwich Islands',
+            'name'                => 'GEORGIA DEL SUR Y LAS ISLAS SANDWICH DEL SUR',
+            'nicename'            => 'Georgia del Sur y las Islas Sandwich del Sur',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '0', ]);
         CountryCode::create(['id' => '199',
             'iso'                 => 'ES',
-            'name'                => 'SPAIN',
-            'nicename'            => 'Spain',
+            'name'                => 'ESPANIA',
+            'nicename'            => 'Espania',
             'iso3'                => 'ESP',
             'numcode'             => '724',
             'phonecode'           => '34', ]);
@@ -1733,50 +1733,50 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '249', ]);
         CountryCode::create(['id' => '202',
             'iso'                 => 'SR',
-            'name'                => 'SURINAME',
-            'nicename'            => 'Suriname',
+            'name'                => 'SURINAM',
+            'nicename'            => 'Surinam',
             'iso3'                => 'SUR',
             'numcode'             => '740',
             'phonecode'           => '597', ]);
         CountryCode::create(['id' => '203',
             'iso'                 => 'SJ',
-            'name'                => 'SVALBARD AND JAN MAYEN',
-            'nicename'            => 'Svalbard and Jan Mayen',
+            'name'                => 'SVALBARD Y JAN MAYEN',
+            'nicename'            => 'Svalbard y Jan Mayen',
             'iso3'                => 'SJM',
             'numcode'             => '744',
             'phonecode'           => '47', ]);
         CountryCode::create(['id' => '204',
             'iso'                 => 'SZ',
-            'name'                => 'SWAZILAND',
-            'nicename'            => 'Swaziland',
+            'name'                => 'SUAZILANDIA',
+            'nicename'            => 'Suazilandia',
             'iso3'                => 'SWZ',
             'numcode'             => '748',
             'phonecode'           => '268', ]);
         CountryCode::create(['id' => '205',
             'iso'                 => 'SE',
-            'name'                => 'SWEDEN',
-            'nicename'            => 'Sweden',
+            'name'                => 'SUECIA',
+            'nicename'            => 'Suecia',
             'iso3'                => 'SWE',
             'numcode'             => '752',
             'phonecode'           => '46', ]);
         CountryCode::create(['id' => '206',
             'iso'                 => 'CH',
-            'name'                => 'SWITZERLAND',
-            'nicename'            => 'Switzerland',
+            'name'                => 'SUIZA',
+            'nicename'            => 'Suiza',
             'iso3'                => 'CHE',
             'numcode'             => '756',
             'phonecode'           => '41', ]);
         CountryCode::create(['id' => '207',
             'iso'                 => 'SY',
-            'name'                => 'SYRIAN ARAB REPUBLIC',
-            'nicename'            => 'Syrian Arab Republic',
+            'name'                => 'REPUBLICA ARABE DE SYRIA',
+            'nicename'            => 'Republica Árabe de Siria',
             'iso3'                => 'SYR',
             'numcode'             => '760',
             'phonecode'           => '963', ]);
         CountryCode::create(['id' => '208',
             'iso'                 => 'TW',
-            'name'                => 'TAIWAN, PROVINCE OF CHINA',
-            'nicename'            => 'Taiwan, Province of China',
+            'name'                => 'PROVINCIA DE CHINA, TAIWAN',
+            'nicename'            => 'Provincia de China, Taiwan',
             'iso3'                => 'TWN',
             'numcode'             => '158',
             'phonecode'           => '886', ]);
@@ -1789,15 +1789,15 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '992', ]);
         CountryCode::create(['id' => '210',
             'iso'                 => 'TZ',
-            'name'                => 'TANZANIA, UNITED REPUBLIC OF',
-            'nicename'            => 'Tanzania, United Republic of',
+            'name'                => 'REPUBLICA UNIDA DE TANZANIA',
+            'nicename'            => 'Republica Unida de Tanzania',
             'iso3'                => 'TZA',
             'numcode'             => '834',
             'phonecode'           => '255', ]);
         CountryCode::create(['id' => '211',
             'iso'                 => 'TH',
-            'name'                => 'THAILAND',
-            'nicename'            => 'Thailand',
+            'name'                => 'TAILANDIA',
+            'nicename'            => 'Tailandia',
             'iso3'                => 'THA',
             'numcode'             => '764',
             'phonecode'           => '66', ]);
@@ -1831,22 +1831,22 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '676', ]);
         CountryCode::create(['id' => '216',
             'iso'                 => 'TT',
-            'name'                => 'TRINIDAD AND TOBAGO',
-            'nicename'            => 'Trinidad and Tobago',
+            'name'                => 'TRINIDAD Y TOBAGO',
+            'nicename'            => 'Trinidad y Tobago',
             'iso3'                => 'TTO',
             'numcode'             => '780',
             'phonecode'           => '1868', ]);
         CountryCode::create(['id' => '217',
             'iso'                 => 'TN',
-            'name'                => 'TUNISIA',
-            'nicename'            => 'Tunisia',
+            'name'                => 'TUNEZ',
+            'nicename'            => 'Tunez',
             'iso3'                => 'TUN',
             'numcode'             => '788',
             'phonecode'           => '216', ]);
         CountryCode::create(['id' => '218',
             'iso'                 => 'TR',
-            'name'                => 'TURKEY',
-            'nicename'            => 'Turkey',
+            'name'                => 'TURQUIA',
+            'nicename'            => 'Turquia',
             'iso3'                => 'TUR',
             'numcode'             => '792',
             'phonecode'           => '90', ]);
@@ -1859,8 +1859,8 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '7370', ]);
         CountryCode::create(['id' => '220',
             'iso'                 => 'TC',
-            'name'                => 'TURKS AND CAICOS ISLANDS',
-            'nicename'            => 'Turks and Caicos Islands',
+            'name'                => 'ISLAS TURCAS Y CAICOS',
+            'nicename'            => 'Islas Turcas y Caicos',
             'iso3'                => 'TCA',
             'numcode'             => '796',
             'phonecode'           => '1649', ]);
@@ -1880,36 +1880,36 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '256', ]);
         CountryCode::create(['id' => '223',
             'iso'                 => 'UA',
-            'name'                => 'UKRAINE',
-            'nicename'            => 'Ukraine',
+            'name'                => 'UCRANIA',
+            'nicename'            => 'Ucrania',
             'iso3'                => 'UKR',
             'numcode'             => '804',
             'phonecode'           => '380', ]);
         CountryCode::create(['id' => '224',
             'iso'                 => 'AE',
-            'name'                => 'UNITED ARAB EMIRATES',
-            'nicename'            => 'United Arab Emirates',
+            'name'                => 'EMIRATOS ARABES UNIDOS',
+            'nicename'            => 'Emiratos Arabes Unidos',
             'iso3'                => 'ARE',
             'numcode'             => '784',
             'phonecode'           => '971', ]);
         CountryCode::create(['id' => '225',
             'iso'                 => 'GB',
-            'name'                => 'UNITED KINGDOM',
-            'nicename'            => 'United Kingdom',
+            'name'                => 'REINO UNIDO',
+            'nicename'            => 'Reino Unido',
             'iso3'                => 'GBR',
             'numcode'             => '826',
             'phonecode'           => '44', ]);
         CountryCode::create(['id' => '226',
             'iso'                 => 'US',
-            'name'                => 'UNITED STATES',
-            'nicename'            => 'United States',
+            'name'                => 'ESTADOS UNIDOS',
+            'nicename'            => 'Estados Unidos',
             'iso3'                => 'USA',
             'numcode'             => '840',
             'phonecode'           => '1', ]);
         CountryCode::create(['id' => '227',
             'iso'                 => 'UM',
-            'name'                => 'UNITED STATES MINOR OUTLYING ISLANDS',
-            'nicename'            => 'United States Minor Outlying Islands',
+            'name'                => 'ISLAS MINOR DEL PACIFICO DE ESTADOS UNIDOS',
+            'nicename'            => 'Islas Minor del Pacifico de Estados Unidos',
             'iso3'                => 'NULL',
             'numcode'             => 'NULL',
             'phonecode'           => '1', ]);
@@ -1943,36 +1943,36 @@ class DatabaseSeeder extends Seeder
             'phonecode'           => '58', ]);
         CountryCode::create(['id' => '232',
             'iso'                 => 'VN',
-            'name'                => 'VIET NAM',
-            'nicename'            => 'Viet Nam',
+            'name'                => 'VIETNAM',
+            'nicename'            => 'Vietnam',
             'iso3'                => 'VNM',
             'numcode'             => '704',
             'phonecode'           => '84', ]);
         CountryCode::create(['id' => '233',
             'iso'                 => 'VG',
-            'name'                => 'VIRGIN ISLANDS, BRITISH',
-            'nicename'            => 'Virgin Islands, British',
+            'name'                => 'ISLAS VIRGENES BRITANICAS',
+            'nicename'            => 'Islas Virgenes Britanicas',
             'iso3'                => 'VGB',
             'numcode'             => '92',
             'phonecode'           => '1284', ]);
         CountryCode::create(['id' => '234',
             'iso'                 => 'VI',
-            'name'                => 'VIRGIN ISLANDS, U.S.',
-            'nicename'            => 'Virgin Islands, U.s.',
+            'name'                => 'ISLAS VIRGENES DE LOS ESTADOS UNIDOS',
+            'nicename'            => 'Islas Virgenes de los Estados Unidos',
             'iso3'                => 'VIR',
             'numcode'             => '850',
             'phonecode'           => '1340', ]);
         CountryCode::create(['id' => '235',
             'iso'                 => 'WF',
-            'name'                => 'WALLIS AND FUTUNA',
-            'nicename'            => 'Wallis and Futuna',
+            'name'                => 'WALLIS Y FUTUNA',
+            'nicename'            => 'Wallis y Futuna',
             'iso3'                => 'WLF',
             'numcode'             => '876',
             'phonecode'           => '681', ]);
         CountryCode::create(['id' => '236',
             'iso'                 => 'EH',
-            'name'                => 'WESTERN SAHARA',
-            'nicename'            => 'Western Sahara',
+            'name'                => 'SAHARA OCCIDENTAL',
+            'nicename'            => 'Sahara Occidental',
             'iso3'                => 'ESH',
             'numcode'             => '732',
             'phonecode'           => '212', ]);
@@ -1998,7 +1998,7 @@ class DatabaseSeeder extends Seeder
             'numcode'             => '716',
             'phonecode'           => '263', ]);
 
-        Security::create(['id' => '1', 'lockout_message' => 'You have been locked out of application due to too many failed login attempts.', 'backlist_offender' => '0', 'backlist_threshold' => '15', 'lockout_period' => '15', 'days_to_keep_logs' => '0']);
+        Security::create(['id' => '1', 'lockout_message' => 'Se le ha bloqueado el acceso a la aplicación debido a demasiados intentos fallidos de inicio de sesión.', 'backlist_offender' => '0', 'backlist_threshold' => '15', 'lockout_period' => '15', 'days_to_keep_logs' => '0']);
 
         TemplateSet::create(['id' => '1', 'name' => 'default', 'active' => '1']);
 
@@ -2017,20 +2017,20 @@ class DatabaseSeeder extends Seeder
         TemplateType::create(['id' => '13', 'name' => 'reset_new_password']);
         TemplateType::create(['id' => '14', 'name' => 'merge-ticket-notification']);
 
-        Template::create(['id' => '1', 'variable' => '0', 'name' => 'This template is for sending notice to agent when ticket is assigned to them', 'type' => '1', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br /><br /><b>Ticket No:</b> {!!$ticket_number!!}<br />Has been assigned to you by {!!$ticket_assigner!!} <br/> Please check and resppond on the ticket.<br /> Link: {!!$ticket_link!!}<br /><br />Thank You<br />Kind Regards,<br /> {!!$system_from!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '2', 'variable' => '1', 'name' => 'This template is for sending notice to client with ticket link to check ticket without logging in to system', 'type' => '2', 'subject' => 'Check your Ticket', 'message' => '<div>Hello {!!$user!!},<br/><br/>Click the link below to view your requested ticket<br/> {!!$ticket_link_with_number!!}<br/><br/>Kind Regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '3', 'variable' => '0', 'name' => 'This template is for sending notice to client when ticket status is changed to close', 'type' => '3', 'message' => '<div>Hello,<br/><br/>This message is regarding your ticket ID {!!$ticket_number!!}. We are changing the status of this ticket to "Closed" as the issue appears to be resolved.<br/><br/>Thank you<br/>Kind regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '4', 'variable' => '0', 'name' => 'This template is for sending notice to client on successful ticket creation', 'type' => '4', 'message' => '<div><span>Hello {!!$user!!}<br/><br/></span><span>Thank you for contacting us. This is an automated response confirming the receipt of your ticket. Our team will get back to you as soon as possible. When replying, please make sure that the ticket ID is kept in the subject so that we can track your replies.<br/><br/></span><span><b>Ticket ID:</b> {!!$ticket_number!!} <br/><br/></span><span> {!!$department_sign!!}<br/></span>You can check the status of or update this ticket online at: {!!$system_link!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '5', 'variable' => '0', 'name' => 'This template is for sending notice to agent on new ticket creation', 'type' => '5', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br/><br/>New ticket {!!$ticket_number!!}created <br/><br/><b>From</b><br/><b>Name:</b> {!!$ticket_client_name!!}   <br/><b>E-mail:</b> {!!$ticket_client_email!!}<br/><br/> {!!$content!!}<br/><br/>Kind Regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '6', 'variable' => '0', 'name' => 'This template is for sending notice to client on new ticket created by agent in name of client', 'type' => '6', 'message' => '<div> {!!$content!!}<br><br> {!!$agent_sign!!}<br><br>You can check the status of or update this ticket online at: {!!$system_link!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '7', 'variable' => '1', 'name' => 'This template is for sending notice to client on new registration during new ticket creation for un registered clients', 'type' => '7', 'subject' => 'Registration Confirmation', 'message' => '<p>Hello {!!$user!!}, </p><p>This email is confirmation that you are now registered at our helpdesk.</p><p><b>Registered Email:</b> {!!$email_address!!}</p><p><b>Password:</b> {!!$user_password!!}</p><p>You can visit the helpdesk to browse articles and contact us at any time: {!!$system_link!!}</p><p>Thank You.</p><p>Kind Regards,</p><p> {!!$system_from!!} </p>', 'set_id' => '1']);
-        Template::create(['id' => '8', 'variable' => '1', 'name' => 'This template is for sending notice to any user about reset password option', 'type' => '8', 'subject' => 'Reset your Password', 'message' => 'Hello {!!$user!!},<br/><br/>You asked to reset your password. To do so, please click this link:<br/><br/> {!!$password_reset_link!!}<br/><br/>This will let you change your password to something new.'." If you didn't ask for this, don't worry, we'll keep your password safe.<br/><br/>Thank You.<br/><br/>Kind Regards,<br/>".' {!!$system_from!!}', 'set_id' => '1']);
-        Template::create(['id' => '9', 'variable' => '0', 'name' => 'This template is for sending notice to client when a reply made to his/her ticket', 'type' => '9', 'message' => '<span></span><div><span></span><p> {!!$content!!}<br/></p><p> {!!$agent_sign!!} </p><p><b>Ticket Details</b></p><p><b>Ticket ID:</b> {!!$ticket_number!!}</p></div>', 'set_id' => '1']);
-        Template::create(['id' => '10', 'variable' => '0', 'name' => 'This template is for sending notice to agent when ticket reply is made by client on a ticket', 'type' => '10', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br/><b><br/></b>A reply been made to ticket {!!$ticket_number!!}<br/><b><br/></b><b>From<br/></b><b>Name: </b>{!!$ticket_client_name!!}<br/><b>E-mail: </b>{!!$ticket_client_email!!}<br/><b><br/></b> {!!$content!!}<br/><b><br/></b>Kind Regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '11', 'variable' => '1', 'name' => 'This template is for sending notice to client about registration confirmation link', 'type' => '11', 'subject' => 'Verify your email address', 'message' => '<p>Hello {!!$user!!}, </p><p>This email is confirmation that you are now registered at our helpdesk.</p><p><b>Registered Email:</b> {!!$email_address!!}</p><p>Please click on the below link to activate your account and Login to the system {!!$password_reset_link!!}</p><p>Thank You.</p><p>Kind Regards,</p><p> {!!$system_from!!} </p>', 'set_id' => '1']);
-        Template::create(['id' => '12', 'variable' => '1', 'name' => 'This template is for sending notice to team when ticket is assigned to team', 'type' => '12', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br /><br /><b>Ticket No:</b> {!!$ticket_number!!}<br />Has been assigned to your team : {!!$team!!} by {!!$ticket_assigner!!} <br /><br />Thank You<br />Kind Regards,<br />{!!$system_from!!}</div>', 'set_id' => '1']);
-        Template::create(['id' => '13', 'variable' => '1', 'name' => 'This template is for sending notice to client when password is changed', 'type' => '13', 'subject' => 'Verify your email address', 'message' => 'Hello {!!$user!!},<br /><br />Your password is successfully changed.Your new password is : {!!$user_password!!}<br /><br />Thank You.<br /><br />Kind Regards,<br /> {!!$system_from!!}', 'set_id' => '1']);
-        Template::create(['id' => '14', 'variable' => '1', 'name' => 'This template is to notify users when their tickets are merged.', 'type' => '14', 'subject' => 'Your tickets have been merged.', 'message' => '<p>Hello {!!$user!!},<br />&nbsp;</p><p>Your ticket(s) with ticket number {!!$merged_ticket_numbers!!} have been closed and&nbsp;merged with <a href="{!!$ticket_link!!}">{!!$ticket_number!!}</a>.&nbsp;</p><p>Possible reasons for merging tickets</p><ul><li>Tickets are duplicate</li<li>Tickets state&nbsp;the same issue</li><li>Another member from your organization has created a ticket for the same issue</li></ul><p><a href="{!!$system_link!!}">Click here</a> to login to your account and check your tickets.</p><p>Regards,</p><p>{!!$system_from!!}</p>', 'set_id' => '1']);
+        Template::create(['id' => '1', 'variable' => '0', 'name' => 'Esta plantilla sirve para notificar al agente cuando se le asigna un ticket.', 'type' => '1', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br /><br /><b>Ticket No:</b> {!!$ticket_number!!}<br />Has been assigned to you by {!!$ticket_assigner!!} <br/> Please check and resppond on the ticket.<br /> Link: {!!$ticket_link!!}<br /><br />Thank You<br />Kind Regards,<br /> {!!$system_from!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '2', 'variable' => '1', 'name' => 'Esta plantilla sirve para enviar una notificación al cliente con un enlace para consultar el ticket sin necesidad de iniciar sesión en el sistema.', 'type' => '2', 'subject' => 'Check your Ticket', 'message' => '<div>Hello {!!$user!!},<br/><br/>Click the link below to view your requested ticket<br/> {!!$ticket_link_with_number!!}<br/><br/>Kind Regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '3', 'variable' => '0', 'name' => 'Esta plantilla sirve para notificar al cliente cuando el estado del ticket cambia a «cerrado».', 'type' => '3', 'message' => '<div>Hello,<br/><br/>This message is regarding your ticket ID {!!$ticket_number!!}. We are changing the status of this ticket to "Closed" as the issue appears to be resolved.<br/><br/>Thank you<br/>Kind regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '4', 'variable' => '0', 'name' => 'Esta plantilla sirve para notificar al cliente que el ticket se ha creado correctamente.', 'type' => '4', 'message' => '<div><span>Hello {!!$user!!}<br/><br/></span><span>Thank you for contacting us. This is an automated response confirming the receipt of your ticket. Our team will get back to you as soon as possible. When replying, please make sure that the ticket ID is kept in the subject so that we can track your replies.<br/><br/></span><span><b>Ticket ID:</b> {!!$ticket_number!!} <br/><br/></span><span> {!!$department_sign!!}<br/></span>You can check the status of or update this ticket online at: {!!$system_link!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '5', 'variable' => '0', 'name' => 'Esta plantilla sirve para notificar al agente sobre la creación de un nuevo ticket.', 'type' => '5', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br/><br/>New ticket {!!$ticket_number!!}created <br/><br/><b>From</b><br/><b>Name:</b> {!!$ticket_client_name!!}   <br/><b>E-mail:</b> {!!$ticket_client_email!!}<br/><br/> {!!$content!!}<br/><br/>Kind Regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '6', 'variable' => '0', 'name' => 'Esta plantilla sirve para notificar al cliente sobre un nuevo ticket creado por un agente en su nombre.', 'type' => '6', 'message' => '<div> {!!$content!!}<br><br> {!!$agent_sign!!}<br><br>You can check the status of or update this ticket online at: {!!$system_link!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '7', 'variable' => '1', 'name' => 'Esta plantilla sirve para notificar a un cliente no registrado sobre su nuevo registro al crear un nuevo ticket.', 'type' => '7', 'subject' => 'Registration Confirmation', 'message' => '<p>Hello {!!$user!!}, </p><p>This email is confirmation that you are now registered at our helpdesk.</p><p><b>Registered Email:</b> {!!$email_address!!}</p><p><b>Password:</b> {!!$user_password!!}</p><p>You can visit the helpdesk to browse articles and contact us at any time: {!!$system_link!!}</p><p>Thank You.</p><p>Kind Regards,</p><p> {!!$system_from!!} </p>', 'set_id' => '1']);
+        Template::create(['id' => '8', 'variable' => '1', 'name' => 'Esta plantilla sirve para notificar a cualquier usuario sobre la opción de restablecer la contraseña.', 'type' => '8', 'subject' => 'Reset your Password', 'message' => 'Hello {!!$user!!},<br/><br/>You asked to reset your password. To do so, please click this link:<br/><br/> {!!$password_reset_link!!}<br/><br/>This will let you change your password to something new.'." If you didn't ask for this, don't worry, we'll keep your password safe.<br/><br/>Thank You.<br/><br/>Kind Regards,<br/>".' {!!$system_from!!}', 'set_id' => '1']);
+        Template::create(['id' => '9', 'variable' => '0', 'name' => 'Esta plantilla sirve para notificar al cliente cuando se ha respondido a su ticket.', 'type' => '9', 'message' => '<span></span><div><span></span><p> {!!$content!!}<br/></p><p> {!!$agent_sign!!} </p><p><b>Ticket Details</b></p><p><b>Ticket ID:</b> {!!$ticket_number!!}</p></div>', 'set_id' => '1']);
+        Template::create(['id' => '10', 'variable' => '0', 'name' => 'Esta plantilla sirve para notificar al agente cuando el cliente responde a un ticket.', 'type' => '10', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br/><b><br/></b>A reply been made to ticket {!!$ticket_number!!}<br/><b><br/></b><b>From<br/></b><b>Name: </b>{!!$ticket_client_name!!}<br/><b>E-mail: </b>{!!$ticket_client_email!!}<br/><b><br/></b> {!!$content!!}<br/><b><br/></b>Kind Regards,<br/> {!!$system_from!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '11', 'variable' => '1', 'name' => 'Esta plantilla sirve para notificar al cliente sobre el enlace de confirmación de registro.', 'type' => '11', 'subject' => 'Verify your email address', 'message' => '<p>Hello {!!$user!!}, </p><p>This email is confirmation that you are now registered at our helpdesk.</p><p><b>Registered Email:</b> {!!$email_address!!}</p><p>Please click on the below link to activate your account and Login to the system {!!$password_reset_link!!}</p><p>Thank You.</p><p>Kind Regards,</p><p> {!!$system_from!!} </p>', 'set_id' => '1']);
+        Template::create(['id' => '12', 'variable' => '1', 'name' => 'Esta plantilla sirve para notificar al equipo cuando se le asigna un ticket.', 'type' => '12', 'message' => '<div>Hello {!!$ticket_agent_name!!},<br /><br /><b>Ticket No:</b> {!!$ticket_number!!}<br />Has been assigned to your team : {!!$team!!} by {!!$ticket_assigner!!} <br /><br />Thank You<br />Kind Regards,<br />{!!$system_from!!}</div>', 'set_id' => '1']);
+        Template::create(['id' => '13', 'variable' => '1', 'name' => 'Esta plantilla sirve para notificar al cliente cuando se cambia la contraseña.', 'type' => '13', 'subject' => 'Verify your email address', 'message' => 'Hello {!!$user!!},<br /><br />Your password is successfully changed.Your new password is : {!!$user_password!!}<br /><br />Thank You.<br /><br />Kind Regards,<br /> {!!$system_from!!}', 'set_id' => '1']);
+        Template::create(['id' => '14', 'variable' => '1', 'name' => 'Esta plantilla sirve para notificar a los usuarios cuando se fusionan sus tickets.', 'type' => '14', 'subject' => 'Your tickets have been merged.', 'message' => '<p>Hello {!!$user!!},<br />&nbsp;</p><p>Your ticket(s) with ticket number {!!$merged_ticket_numbers!!} have been closed and&nbsp;merged with <a href="{!!$ticket_link!!}">{!!$ticket_number!!}</a>.&nbsp;</p><p>Possible reasons for merging tickets</p><ul><li>Tickets are duplicate</li<li>Tickets state&nbsp;the same issue</li><li>Another member from your organization has created a ticket for the same issue</li></ul><p><a href="{!!$system_link!!}">Click here</a> to login to your account and check your tickets.</p><p>Regards,</p><p>{!!$system_from!!}</p>', 'set_id' => '1']);
 
         /*
          * All the common settings will be listed here
