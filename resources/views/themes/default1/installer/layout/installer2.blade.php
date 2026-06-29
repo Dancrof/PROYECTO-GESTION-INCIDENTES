@@ -27,8 +27,7 @@
     </div>
     
     
-    <p style="text-align: center;"> Copyright &copy; 2015 - <?php echo date('Y')?> · Ladybird Web Solution Pvt Ltd. All Rights Reserved. Powered by <a target="_blank" href="http://www.faveohelpdesk.com">Faveo </a></p>
-    
+    @include('themes.default1.installer.components.copyright-installer')    
 
 
     

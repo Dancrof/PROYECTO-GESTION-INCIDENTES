@@ -12,10 +12,10 @@
 
 </style>
 
-<h1>You're All Set</h1>
+<h1>Ya está todo listo.</h1>
 <p>
 
-<h3>Thank You</h3>
+<h3>Gracias!!</h3>
 <p>
 
 <br>

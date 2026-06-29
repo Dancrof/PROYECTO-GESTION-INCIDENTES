@@ -19,7 +19,7 @@ active
 @section('content')
  <div id="form-content">
 <div ng-app="myApp">
-        <h1 style="text-align: center;">Locale Information</h1>
+        <h1 style="text-align: center;">Localización</h1>
         {!! Form::open(['url'=>route('postaccount'), 'id' => 'postaccount']) !!}
         
 
@@ -60,9 +60,9 @@ active
 
     <div ng-controller="MainController">
             <table>                
-                <p>Welcome to the five-minute Faveo installation process! Just fill in the information below.</p>
-                <h1 style="border-top:1px solid #dedede; border-bottom:1px solid #dedede; padding: 10px 0px 10px 0px;">Personal Information</h1>
-                <p>Please provide the following information. Don’t worry, you can always change these settings later.</p>
+                <p>¡Bienvenido al proceso de instalación de cinco minutos de PlataformaEscolar! Simplemente complete la información a continuación.</p>
+                <h1 style="border-top:1px solid #dedede; border-bottom:1px solid #dedede; padding: 10px 0px 10px 0px;">Información Personal</h1>
+                <p>Por favor, proporcione la siguiente información. No se preocupe, siempre puede cambiar estas configuraciones más tarde.</p>
                 <div>
                     <tr>
                         <td>
@@ -79,7 +79,7 @@ active
                     </tr>
                     <tr>
                         <td>
-                            <label for="box2">Last Name<span style="color
+                            <label for="box2">Apellido<span style="color
                                 : red;font-size:12px;">*</span></label>
                         </td>
                         <td>
@@ -92,7 +92,7 @@ active
                     </tr>
                     <tr>
                         <td>
-                            <label for="box2">Email<span style="color
+                            <label for="box2">Correo Electrónico<span style="color
                                 : red;font-size:12px;">*</span></label>
                         </td>
                         <td>
@@ -107,12 +107,12 @@ active
                 </div>
             </table>
             <table>
-                <h1>Login Information</h1>
+                <h1>Información de Inicio de Sesión</h1>
                 <div>
 
                     <tr>
                         <td>
-                            <label for="box4">User Name <span style="color
+                            <label for="box4">Nombre de Usuario <span style="color
                                     : red;font-size:12px;">*</span>
                             </label>
                         </td>
@@ -126,7 +126,7 @@ active
                     </tr>
                     <tr>
                         <td>
-                            <label for="box4">Password <span style="color
+                            <label for="box4">Contraseña <span style="color
                                     : red;font-size:12px;">*</span>
                             </label>
                         </td>
@@ -140,7 +140,7 @@ active
                     </tr>
                     <tr>
                         <td>
-                            <label for="box5">Confirm Password<span style="color
+                            <label for="box5">Confirmar Contraseña<span style="color
                                     : red;font-size:12px;">*</span>
                             </label>
                         </td>
@@ -155,7 +155,7 @@ active
                 </div>
             </table>
             <table>
-                <h1>Locale Information</h1>
+                <h1>Localización</h1>
                 <div>
                     <tr>
                         <td>
@@ -238,8 +238,8 @@ active
             </table>
             <br><br>
             <p class="setup-actions step">
-                <input type="submit" id="submitme" class="button-primary button button-large button-next" value="Install">
-                <a href="{{url('step4')}}" class="button button-large button-next" style="float: left">Previous</a>
+                <input type="submit" id="submitme" class="button-primary button button-large button-next" value="Instalar">
+                <a href="{{url('step4')}}" class="button button-large button-next" style="float: left">Anterior</a>
             </p>
         </form>
     </div>
@@ -271,7 +271,7 @@ active
 
         $('#postaccount').on('submit', function(e) {
             $('#submitme').attr('disabled', true);
-            $('#submitme').val('Installing, please wait...');
+            $('#submitme').val('Instalando, por favor espere...');
             $empty_field = 0;
             $("#postaccount input").each(function() {
                 if($(this).attr('name') == 'firstname' ||
@@ -290,10 +290,10 @@ active
                 }
             });
             if ($empty_field !=0 ) {
-                alert('Please fill all required values.');
+                alert('Por favor, complete todos los campos obligatorios.');
                 e.preventDefault();
                 $('#submitme').attr('disabled', false);
-                $('#submitme').val('Install');
+                $('#submitme').val('Instalar');
             }
         });
 

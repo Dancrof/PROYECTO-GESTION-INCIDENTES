@@ -14,8 +14,8 @@ active
 
 @section('content')
 <div ng-app="myApp">
-    <h1 style="text-align: center;">Database Setup</h1>
-    <p class="wc-setup-content">Below you should enter your database connection details. If you’re not sure about these, contact your host.</p>
+    <h1 style="text-align: center;">Configuración de Base de Datos</h1>
+    <p class="wc-setup-content">A continuación, debe ingresar los detalles de conexión a su base de datos. Si no está seguro sobre estos, contacte a su proveedor de hosting.</p>
 
     @if(Cache::has('fails'))
     <div class="wc-setup-content">
@@ -48,7 +48,7 @@ active
     <table ng-controller="MainController">
         <tr>
             <td>
-                <label for="selectbox1">Database <span style="color: red;font-size:12px;">*</span></label>
+                <label for="selectbox1">Base de Datos <span style="color: red;font-size:12px;">*</span></label>
             </td>
             <td>
                 <div class="side-by-side clearfix moveleftthre">
@@ -78,7 +78,7 @@ active
         </tr>
         <tr>
             <td>
-                <label for="box2">Port</label>
+                <label for="box2">Puerto</label>
             </td>
             <td>
                 {!! Form::text('port', null, ['onkeydown' => 'return CheckPortForInput(event)']) !!}
@@ -90,7 +90,7 @@ active
         </tr>
         <tr>
             <td>
-                <label for="box3">Database Name<span style="color: red;font-size:12px;">*</span></label>
+                <label for="box3">Nombre de la Base de Datos<span style="color: red;font-size:12px;">*</span></label>
             </td>
             <td>
                 {!! Form::text('databasename', null, ['required' => true]) !!}
@@ -102,7 +102,7 @@ active
         </tr>
         <tr>
             <td>
-                <label for="box4">User Name<span style="color: red; font-size: 12px;">*</span></label>
+                <label for="box4">Nombre de Usuario<span style="color: red; font-size: 12px;">*</span></label>
             </td>
             <td>
                 {!! Form::text('username', null, ['required' => true]) !!}
@@ -114,7 +114,7 @@ active
         </tr>
         <tr>
             <td>
-                <label for="box5">Password</label>
+                <label for="box5">Contraseña</label>
             </td>
             <td>
                 <input type="text" name="password"> 
@@ -128,13 +128,13 @@ active
     <br>
     <p ng-controller="MainController">
         <input id="dummy-data" class="input-checkbox" type="checkbox" name="dummy-data">
-            <label for="dummy-data" style="color:#3AA7D9">Install dummy data</label>
+            <label for="dummy-data" style="color:#3AA7D9">Instalar datos de prueba</label>
             <button type="button" data-toggle="popover" data-placement="right" data-arrowcolor="#eeeeee" data-bordercolor="#bbbbbb" data-title-backcolor="#cccccc" data-title-bordercolor="#bbbbbb" data-title-textcolor="#444444" data-content-backcolor="#eeeeee" data-content-textcolor="#888888" title="@{{DummyDataTitle}}" data-content="@{{DummyDataContent}}" style="padding: 0px;border: 0px; border-radius: 5px;"><i class="fa fa-question-circle" style="padding: 0px;"></i>
                             </button>
     </p>
     <p class="setup-actions step">
-        <input type="submit" id="submitme" class="button-primary button button-large button-next" value="Continue">
-        <a href="{!! route('licence') !!}" class="button button-large button-next" style="float: left">Previous</a>
+        <input type="submit" id="submitme" class="button-primary button button-large button-next" value="Continuar">
+        <a href="{!! route('licence') !!}" class="button button-large button-next" style="float: left">Anterior</a>
     </p>
     <br>
 </form>

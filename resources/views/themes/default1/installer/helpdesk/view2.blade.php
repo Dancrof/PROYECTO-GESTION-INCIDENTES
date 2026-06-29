@@ -23,7 +23,7 @@ active
          @endif
 <?php
 define('PROBE_VERSION', '1.0');
-define('PROBE_FOR', 'PlataformaEscolar HELPDESK '. Config::get('app.version').' and Newer');
+define('PROBE_FOR', 'PlataformaEscolar HELPDESK '. Config::get('app.version'));
 define('STATUS_OK', 'Ok');
 define('STATUS_WARNING', 'Warning');
 define('STATUS_ERROR', 'Error');
@@ -39,12 +39,12 @@ class TestResult {
 ?>
 
 <div id="wrapper">
-    <h1>Probe</h1>
+    <h1>Prueba de Entorno</h1>
 
-        <b>Probe Version:</b>
+        <b>Versión de Prueba:</b>
         <?php echo PROBE_VERSION?>
         <br>
-        <b>Testing For:</b>
+        <b>Prueba para:</b>
         <?php echo PROBE_FOR?>
         <br/>
         <br/>
@@ -56,10 +56,10 @@ class TestResult {
 
 function validate_php(&$results) {
     if (version_compare(PHP_VERSION, '8.1') != 1) {
-        $results[] = new TestResult('PHP version required in order to run PlataformaEscolar HELPDESK is PHP 7.1.* PHP version greater or lesser than 7.1 are not supported yet. Your PHP version: ' . PHP_VERSION, STATUS_ERROR);
+        $results[] = new TestResult('La versión de PHP requerida para ejecutar PlataformaEscolar HELPDESK es PHP 8.1.*. Las versiones de PHP mayores o menores a 8.1 no son compatibles aún. Su versión de PHP es: ' . PHP_VERSION, STATUS_ERROR);
         return false;
     } else {
-        $results[] = new TestResult('Your PHP version is ' . PHP_VERSION, STATUS_OK);
+        $results[] = new TestResult('Su versión de PHP es ' . PHP_VERSION, STATUS_OK);
         return true;
     } // if
 } // validate_php
@@ -105,13 +105,13 @@ function checkFilePermission(&$results)
         $f1 = '644';
     }
     if( $f1 >= '644' && $f2 >= '755') {
-        $results[] = new TestResult('File permission looks fine', STATUS_OK);
+        $results[] = new TestResult('Los permisos del archivo parecen correctos.', STATUS_OK);
         return true;
     } else {
         if(isset($path1)){
-        $results[] = new TestResult('File permissions needed.<ul><b>Change file permission for following files</b><li>'.$path1.'%nbsp: \'644\'</li><li>'.$path2.'%nbsp: \'755\'</li></ul></br>Change the permission manually on your server or <a href="change-file-permission">click here.</a>', STATUS_ERROR);
+        $results[] = new TestResult('Se requieren permisos de archivo. <ul><b>Cambie permisos de archivo para los siguientes archivos</b><li>'.$path1.'%nbsp: \'644\'</li><li>'.$path2.'%nbsp: \'755\'</li></ul></br>Cambie el permiso manualmente en su servidor o <a href="change-file-permission">click aquí.</a>', STATUS_ERROR);
         } else {
-            $results[] = new TestResult('File permissions needed.<ul><b>Change file permission to "755" for following files</b><li>'.$path2.'</li></ul></br>Change the permission manually on your server or <a href="change-file-permission">click here.</a>', STATUS_ERROR);
+            $results[] = new TestResult('Se requieren permisos de archivo. <ul><b>Cambie permisos de archivo para los siguientes archivos</b><li>'.$path2.'</li></ul></br>Cambie el permiso manualmente en su servidor o <a href="change-file-permission">click aquí.</a>', STATUS_ERROR);
         }
         return false;
     }
@@ -131,7 +131,7 @@ function validate_memory_limit(&$results) {
         $results[] = new TestResult('Your memory limit is: ' . $formatted_memory_limit, STATUS_OK);
         return true;
     } else {
-        $results[] = new TestResult('Your memory is too low to complete the installation. Minimal value is 64MB, and you have it set to ' . $formatted_memory_limit, STATUS_ERROR);
+        $results[] = new TestResult('Tu límite de memoria es muy bajo para completar la instalación. El valor mínimo es 64MB, y tienes configurado ' . $formatted_memory_limit, STATUS_ERROR);
         return false;
     } // if
 } // validate_memory_limit
@@ -168,10 +168,10 @@ function validate_zend_compatibility_mode(&$results) {
 
     if (version_compare(PHP_VERSION, '5.0') >= 0) {
         if (ini_get('zend.ze1_compatibility_mode')) {
-            $results[] = new TestResult('zend.ze1_compatibility_mode is set to On. This can cause some strange problems. It is strongly suggested to turn this value to Off (in your php.ini file)', STATUS_WARNING);
+            $results[] = new TestResult('zend.ze1_compatibility_mode está configurado en Activado. Esto puede causar problemas extraños. Se recomienda encarecidamente cambiar este valor a Off (en su archivo php.ini)', STATUS_WARNING);
             $ok = false;
         } else {
-            $results[] = new TestResult('zend.ze1_compatibility_mode is turned Off', STATUS_OK);
+            $results[] = new TestResult('zend.ze1_compatibility_mode está configurado en Desactivado', STATUS_OK);
         } // if
     } // if
 
@@ -187,22 +187,22 @@ function validate_extensions(&$results) {
 
     foreach ($required_extensions as $required_extension) {
         if (extension_loaded($required_extension)) {
-            $results[] = new TestResult("Required extension '$required_extension' found", STATUS_OK);
+            $results[] = new TestResult("Extension requerida '$required_extension' found", STATUS_OK);
         } else {
-            $results[] = new TestResult("Extension '$required_extension' is required in order to run PlataformaEscolar Helpdesk ", STATUS_ERROR);
+            $results[] = new TestResult("Extension '$required_extension' es requerida para ejecutar PlataformaEscolar Helpdesk ", STATUS_ERROR);
             $ok = false;
         } // if
     } // foreach
 
     // Check for eAccelerator
     if (extension_loaded('eAccelerator') && ini_get('eaccelerator.enable')) {
-        $results[] = new TestResult("eAccelerator opcode cache enabled. <span class=\"details\">eAccelerator opcode cache causes PlataformaEscolar Helpdesk to crash. <a href=\"https://eaccelerator.net/wiki/Settings\">Disable it</a> for folder where PlataformaEscolar Helpdesk is installed, or use APC instead: <a href=\"http://www.php.net/apc\">http://www.php.net/apc</a>.</span>", STATUS_ERROR);
+        $results[] = new TestResult("eAccelerator opcode cache activo. <span class=\"details\">eAccelerator opcode cache causa que PlataformaEscolar Helpdesk colapse. <a href=\"https://eaccelerator.net/wiki/Settings\">Deshabilitarlo</a> para la carpeta donde está instalado PlataformaEscolar Helpdesk, o usar APC en su lugar: <a href=\"http://www.php.net/apc\">http://www.php.net/apc</a>.</span>", STATUS_ERROR);
         $ok = false;
     } // if
 
     // Check for XCache
     if (extension_loaded('XCache') && ini_get('xcache.cacher')) {
-        $results[] = new TestResult("XCache opcode cache enabled. <span class=\"details\">XCache opcode cache causes PlataformaEscolar Helpdesk to crash. <a href=\"http://xcache.lighttpd.net/wiki/XcacheIni\">Disable it</a> for folder where PlataformaEscolar Helpdesk is installed, or use APC instead: <a href=\"http://www.php.net/apc\">http://www.php.net/apc</a>.</span>", STATUS_ERROR);
+        $results[] = new TestResult("XCache opcode cache activo. <span class=\"details\">XCache opcode cache causa que PlataformaEscolar Helpdesk colapse. <a href=\"http://xcache.lighttpd.net/wiki/XcacheIni\">Deshabilitarlo</a> para la carpeta donde está instalado PlataformaEscolar Helpdesk, o usar APC en su lugar: <a href=\"http://www.php.net/apc\">http://www.php.net/apc</a>.</span>", STATUS_ERROR);
         $ok = false;
     } // if
 
@@ -220,9 +220,9 @@ function validate_extensions(&$results) {
 
     foreach ($recommended_extensions as $recommended_extension => $recommended_extension_desc) {
         if (extension_loaded($recommended_extension)) {
-            $results[] = new TestResult("Recommended extension '$recommended_extension' found", STATUS_OK);
+            $results[] = new TestResult("Extension recomendada '$recommended_extension' encontrada", STATUS_OK);
         } else {
-            $results[] = new TestResult("Extension '$recommended_extension' was not found. <span class=\"details\">$recommended_extension_desc</span>", STATUS_WARNING);
+            $results[] = new TestResult("La extensión '$recommended_extension' no fue encontrada. <span class=\"details\">$recommended_extension_desc</span>", STATUS_WARNING);
         } // if
     } // foreach
 
@@ -242,10 +242,10 @@ function checkDisabledFunctions(&$results) {
         foreach ($required_functions as $value) {
             if($key == $value) {
                 if (strpos(ini_get('disable_functions'), $key) !== false) {
-                    $results[] = new TestResult("Function '$value' is required in order to run PlataformaEscolar Helpdesk. Please check php.ini to enable this function or contact your server administrator", STATUS_ERROR);
+                    $results[] = new TestResult("Función '$value' es requerida para ejecutar PlataformaEscolar Helpdesk. Por favor, verifica el archivo php.ini para habilitar esta función o contacta a tu administrador de servidor", STATUS_ERROR);
                     $ok = false;
                 } else {
-                    $results[] = new TestResult("All required functions found", STATUS_OK);
+                    $results[] = new TestResult("Todas las funciones requeridas encontradas", STATUS_OK);
                 }
             }
         }
@@ -257,9 +257,9 @@ function checkMaxExecutiontime(&$results)
 {
     $ok = true;
     if ((int)ini_get('max_execution_time') >=  120) {
-        $results[] = new TestResult("Maximum execution time is as per requirement.", STATUS_OK);
+        $results[] = new TestResult("El tiempo máximo de ejecución se ajusta a los requisitos.", STATUS_OK);
     } else {
-        $results[] = new TestResult("Maximum execution time is too low. Recommneded execution time is 120 seconds ", STATUS_WARNING);
+        $results[] = new TestResult("El tiempo máximo de ejecución es demasiado bajo. El tiempo de ejecución recomendado es de 120 segundos ", STATUS_WARNING);
     }
     return $ok;
 }
@@ -290,7 +290,7 @@ if ($php_ok && $memory_ok && $extensions_ok && $file_permission && $required_fun
 </div>  
 
             <div class="woocommerce-message woocommerce-tracker" >
-                <p id="pass">OK, this system can run PlataformaEscolar</p>
+                <p id="pass">De acuerdo, este sistema puede ejecutar PlataformaEscolar Helpdesk.</p>
             </div>
 
 
@@ -308,7 +308,7 @@ if ($php_ok && $memory_ok && $extensions_ok && $file_permission && $required_fun
     ?></div><br>
             
             <div class="woocommerce-message woocommerce-tracker" >
-                <p id="fail">This system does not meet PlataformaEscolar system requirements</p>
+                <p id="fail">Este sistema no cumple con los requisitos del sistema PlataformaEscolar Helpdesk.</p>
             </div>
 <p class="setup-actions step">
     <a href="{{URL::route('licence')}}" style="float: left"><button value="prev" class="button-primary button button-large">Anterior</button></a>
@@ -319,9 +319,7 @@ if ($php_ok && $memory_ok && $extensions_ok && $file_permission && $required_fun
 
 <div id="legend">
         {{-- <ul> --}}
-          <p><span class="ok">Ok</span> &mdash; All Ok<br/>
-          <span class="warning">Warning</span> &mdash; Not a deal breaker, but it's recommended to have this installed for some features to work<br/>
-          <span class="error">Error</span> &mdash; PlataformaEscolar HELPDESK require this feature and can't work without it</p>
+                    @include('themes.default1.installer.components.info-procces-install')
         {{-- </ul> --}}
       </div>
 </div>

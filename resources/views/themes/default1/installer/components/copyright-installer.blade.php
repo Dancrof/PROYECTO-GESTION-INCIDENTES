@@ -1,0 +1,1 @@
+<p style="text-align: center;"> Copyright &copy; 2015 - <?php echo date('Y')?> · PlataformaEscolar Ltd. Todos los derechos reservados. Desarrollado por <a target="_blank" href="https://plataformaescolar.org/">PlataformaEscolar Helpdesk</a></p>
