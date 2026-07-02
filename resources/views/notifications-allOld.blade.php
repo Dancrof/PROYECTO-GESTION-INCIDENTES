@@ -159,7 +159,7 @@ class="active"
 <?php $ticket_number = App\Model\helpdesk\Ticket\Tickets::whereId($notification123-> model_id)->first(); ?>
                                         <input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Mark Read" class="noti_User clickfun" id="{{$notification123-> notification_id}}">
                                         <label for='cl'><span></span>&nbsp<img src="{{$user->profile_pic}}" class="img-circle"  style="width:25px;height: 25px" alt="User Image" />
-                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification123->model_id) !!}" id='{{ $notification123->notification_id }}' class='noti_User'>{!! $notification123->message !!} with id "{!!$ticket_number->ticket_number!!}"</a></h6>
+                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification123->model_id) !!}" id='{{ $notification123->notification_id }}' class='noti_User'>{!! $notification123->message !!} con id "{!!$ticket_number->ticket_number!!}"</a></h6>
                                             <small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification123-> created_at }}</small>
                                         </label><div class="tools">
                                             <a href="{!! route('ticket.thread', $notification123->model_id) !!}" id='{{ $notification123->notification_id }}'  data-toggle="tooltip"  data-placement="top" title="View" class='noti_User'><i class="fa fa-eye"></i></a>
@@ -171,7 +171,7 @@ class="active"
 <?php $ticket_number = App\Model\helpdesk\Ticket\Tickets::whereId($notification123 -> model_id)->first(); ?>
                                         <input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Mark Read" class="noti_User clickfun" id="{{$notification123-> notification_id}}">
                                         <label for='cl'><span></span>&nbsp<img src="{{$user->profile_pic}}" class="img-circle"  style="width:25px;height: 25px"  alt="User Image" />
-                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification123->model_id) !!}" id='{{ $notification123->notification_id }}' class='noti_User'>{!! $notification123->message !!} with id "{!!$ticket_number->ticket_number!!}"</a></h6>
+                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification123->model_id) !!}" id='{{ $notification123->notification_id }}' class='noti_User'>{!! $notification123->message !!} con id "{!!$ticket_number->ticket_number!!}"</a></h6>
                                             <small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification123-> created_at }}</small>
                                         </label><div class="tools">
                                             <a href="{!! route('ticket.thread', $notification123->model_id) !!}" id='{{ $notification123->notification_id }}'  data-toggle="tooltip"  data-placement="top" title="View" class='noti_User'><i class="fa fa-eye"></i></a>

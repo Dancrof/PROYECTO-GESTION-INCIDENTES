@@ -157,13 +157,13 @@
                                         @if($notification->is_read == 1)
                                         <li  class="task" style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$user -> profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
                                                 <a href="{!! route('ticket.thread', $notification->model_id) !!}" id='{{ $notification -> notification_id}}' class='noti_User'>
-                                                    {!! $notification->message !!} with id "{!!$ticket_number->ticket_number!!}"
+                                                    {!! $notification->message !!} con id "{!!$ticket_number->ticket_number!!}"
                                                 </a></span>
                                         </li>
                                         @else
                                         <li style="list-style: none;margin-left: -30px"><span>&nbsp<img src="{{$user -> profile_pic}}" class="img-circle"  style="width:6%;height: 5%" alt="User Image" />
                                                 <a href="{!! route('ticket.thread', $notification->model_id) !!}" id='{{ $notification -> notification_id}}' class='noti_User'>
-                                                    {!! $notification->message !!} with id "{!!$ticket_number->ticket_number!!}"
+                                                    {!! $notification->message !!} con id "{!!$ticket_number->ticket_number!!}"
                                                 </a></span>
                                         </li>
                                         @endif

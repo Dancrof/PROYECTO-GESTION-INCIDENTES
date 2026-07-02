@@ -239,7 +239,7 @@
 
                                             <a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id}}'
                                                 class='noti_User'>
-                                                {!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"
+                                                {!! $notification->notification->type->message !!} con id "{!!$notification->notification->model->ticket_number!!}"
                                             </a>
                                         </span>
                                     </div>
@@ -260,7 +260,7 @@
 
                                             <a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id}}'
                                                 class='noti_User'>
-                                                {!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"
+                                                {!! $notification->notification->type->message !!} con id "{!!$notification->notification->model->ticket_number!!}"
                                             </a>
                                         </span>
                                     </div>
@@ -759,13 +759,7 @@
             </div>
 
             <footer class="main-footer">
-
-                <div class="float-right d-none d-sm-block">
-
-                    <span style="font-weight: 500">{!! Lang::get('lang.version') !!}</span> {!! Config::get('app.version') !!}
-                </div>
-
-                <span style="font-weight: 500">{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>.</span> {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="http://www.faveohelpdesk.com/" target="_blank">Faveo</a>
+                @include('themes.default1.agent.components.copyright-agent')
             </footer>
         </div><!-- ./wrapper -->
 

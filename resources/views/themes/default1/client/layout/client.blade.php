@@ -457,9 +457,7 @@
                     <div class="clearfix"></div>
                     <hr style="color:#E5E5E5"/>
                     <div class="row">
-                        <div class="site-info col-md-6">
-                            <p class="text-muted">{!! Lang::get('lang.copyright') !!} &copy; {!! date('Y') !!}  <a href="{!! $company->website !!}" target="_blank">{!! $company->company_name !!}</a>. {!! Lang::get('lang.all_rights_reserved') !!}. {!! Lang::get('lang.powered_by') !!} <a href="https://www.faveohelpdesk.com/"  target="_blank">Faveo</a></p>
-                        </div>
+                        @include('themes.default1.client.components.copyright-client')
                         <div class="site-social text-right col-md-6">
                             <?php $socials = App\Model\helpdesk\Theme\Widgets::all(); ?>
                             <ul class="list-inline hidden-print" style="display: flex;float: right;">

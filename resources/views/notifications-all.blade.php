@@ -159,7 +159,7 @@ class="active"
                                     <li class="task">
                                         <input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Mark Read" class="noti_User clickfun" id="{{$notification -> notification_id}}">
                                         <label for='cl'><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle"  style="width:25px;height: 25px" alt="User Image" />
-                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"</a></h6>
+                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} con id "{!!$notification->notification->model->ticket_number!!}"</a></h6>
                                             <small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification -> created_at }}</small>
                                         </label><div class="tools">
                                             <a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}'  data-toggle="tooltip"  data-placement="top" title="View" class='noti_User'><i class="fa fa-eye"></i></a>
@@ -170,7 +170,7 @@ class="active"
                                                                         <li>
                                         <input type="checkbox" value="" name="cc"  data-toggle="tooltip"  data-placement="top" title="Mark Read" class="noti_User clickfun" id="{{$notification -> notification_id}}">
                                         <label for='cl'><span></span>&nbsp<img src="{{$notification->users-> profile_pic}}" class="img-circle"  style="width:25px;height: 25px"  alt="User Image" />
-                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} with id "{!!$notification->notification->model->ticket_number!!}"</a></h6>
+                                            <h6 class="textcontent marginzero"><a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}' class='noti_User'>{!! $notification->notification->type->message !!} con id "{!!$notification->notification->model->ticket_number!!}"</a></h6>
                                             <small class="label label-info"><i class="fa fa-clock-o"></i> {{ $notification -> created_at }}</small>
                                         </label><div class="tools">
                                             <a href="{!! route('ticket.thread', $notification->notification->model_id) !!}" id='{{ $notification -> notification_id }}'  data-toggle="tooltip"  data-placement="top" title="View" class='noti_User'><i class="fa fa-eye"></i></a>
