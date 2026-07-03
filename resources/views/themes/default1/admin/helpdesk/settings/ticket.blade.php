@@ -171,7 +171,7 @@ class="nav-link active"
                 },
                 error: function (response) {
                     console.log(response);
-                    $("#result").html("<i>Invalid format</i>");
+                    $("#result").html("<i>Formato inválido</i>");
                 }
             });
         }
