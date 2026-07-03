@@ -136,16 +136,16 @@ if ($thread->title != "") {
             <?php
             \Illuminate\Support\Facades\Event::dispatch(new \App\Events\TicketBoxHeader($user->id));
 
-            if ($group->can_edit_ticket == 1) {
+            if ($group->can_edit_ticket == 1 && $tickets->assigned_to == Auth::user()->id) {
                 ?>
-            <button type="button" class="btn btn-sm btn-default btn-tool">
+            <button type="button" class="btn btn-sm btn-default btn-tool" data-toggle="modal" data-target="#Edit">
 
                 <i class="fas fa-edit" style="color:green;"></i> {{trans('lang.edit')}}
 
             </button>            <?php } ?>
 
-            <?php if ($group->can_assign_ticket == 1) { ?>
-            <button type="button" class="btn btn-sm btn-default btn-tool">
+            <?php if ($group->can_assign_ticket == 1 && ($tickets->assigned_to == null || $tickets->assigned_to == 0)) { ?>
+            <button type="button" class="btn btn-sm btn-default btn-tool" data-toggle="modal" data-target="#assign{{$tickets->id}}">
 
                 <i class="fas fa-hand-point-right" style="color:orange;"></i> {{trans('lang.assign')}}
 
@@ -1058,9 +1058,9 @@ if ($thread->title != "") {
                                 $count_teams = count($teams);
                                 ?>
                                
-                                <optgroup label="Agents ( {!! $count_assign !!} )">
+                                <optgroup label="Agentes ( {!! $count_assign !!} )">
                                     @foreach($assign as $user)
-                                    <option  value="user_{{$user->id}}">{{$user->first_name." ".$user->last_name}}</option>
+                                    <option  value="user_{{$user->id}}">{{$user->first_name." ".$user->last_name." - ".$user->email}}</option>
                                     @endforeach
                                 </optgroup>
                             </select>
