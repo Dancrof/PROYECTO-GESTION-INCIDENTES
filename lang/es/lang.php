@@ -1,7 +1,7 @@
 <?php
 /*
  |============================================================================
- |  Faveo Spanish Translation
+ |  PlataformaEscolar Spanish Translation
  |============================================================================
  |  Author details
  | Name: Dionis Hernandez
@@ -55,6 +55,7 @@ return [
       |  Página Inicio sesión
       |--------------------------------------
      */
+    'title_company_name'                 => 'CENTRO DE SOPORTE',
     'login_to_start_your_session'        => 'Ingrese para iniciar su sesión',
     'login'                              => 'Iniciar sesión',
     'remember'                           => 'Recuérdame',
@@ -325,11 +326,11 @@ return [
     'the_rtl_support_is_only_applicable_to_the_outgoing_mails'   => 'El soporte de RTL sólo es aplicable a los correos salientes',
     'user_set_ticket_status'                                     => 'Permitir a los usuarios establecer el estado del ticket',
     'send_otp_for_account_verfication'                           => 'Enviar OTP a los usuarios',
-    'otp_usage_info'                                             => 'If you disallow unverified users to create ticket, we\'ll send an email with verification link and an sms with OTP code to users. If email is set as non mandatory users will recieve username and password on their mobile. [NOTE: SMS will be sent using Faveo SMS plugin].',
-    'send_otp_title_message'                                     => 'Send OTP for user account verification, reset password and mobile number verification',
-    'allow_unverified_users_to_create_ticket'                    => 'Allow unverified users to create tickets',
-    'make-email-mandatroy'                                       => 'Make email mandatory for ticket/user creation',
-    'email_man_info'                                             => 'Si no permite a los usuarios no verificados crear tickets, enviaremos un correo electrónico con vínculo de verificación y un sms con código OTP a los usuarios. Si el correo electrónico se establece como no obligatorio, los usuarios recibirán su nombre de usuario y contraseña en su móvil. [NOTA: SMS se enviará utilizando Faveo SMS plugin].',
+    'otp_usage_info'                                             => 'Si impide que los usuarios no verificados creen tickets, enviaremos a los usuarios un correo electrónico con un enlace de verificación y un SMS con un código OTP. Si el correo electrónico no es obligatorio, los usuarios recibirán su nombre de usuario y contraseña en el móvil. [NOTA: El SMS se enviará mediante el plugin SMS de PlataformaEscolar].',
+    'send_otp_title_message'                                     => 'Enviar OTP para la verificación de la cuenta de usuario, el restablecimiento de la contraseña y la verificación del número de móvil',
+    'allow_unverified_users_to_create_ticket'                    => 'Permitir que los usuarios no verificados creen tickets',
+    'make-email-mandatroy'                                       => 'Hacer obligatorio el correo electrónico para la creación de tickets o usuarios',
+    'email_man_info'                                             => 'Si no permite a los usuarios no verificados crear tickets, enviaremos un correo electrónico con vínculo de verificación y un sms con código OTP a los usuarios. Si el correo electrónico se establece como no obligatorio, los usuarios recibirán su nombre de usuario y contraseña en su móvil. [NOTA: SMS se enviará utilizando PlataformaEscolar SMS plugin].',
     /*
       |--------------------------------------
       |   Dirección de correo electrónico Página de configuración
@@ -357,7 +358,7 @@ return [
     'cron_notification'                   => 'Habilitar la notificación cron',
     'cron'                                => 'Planificador de trabajos',
     'cron-jobs'                           => 'Cron jobs',
-    'crone-url-message'                   => 'Éstas son la URL del planificador de tareas de Faveo (trabajo cron) para su sistema.',
+    'crone-url-message'                   => 'Éstas son la URL del planificador de tareas de PlataformaEscolar (trabajo cron) para su sistema.',
     'clipboard-copy-message'              => 'Copiado al portapapeles.',
     'click'                               => 'haga clic aquí',
     'check-cron-set'                      => 'Comprobar cómo configurar trabajos cron en su servidor.',
@@ -461,7 +462,7 @@ return [
     'SQL_errors'                                            => 'Errores SQL',
     'excessive_failed_login_attempts'                       => 'Excesivos intentos de inicio de sesión fallidos ',
     'system_error_reports'                                  => 'Informes de errores del sistema',
-    'Send_app_crash_reports_to_help_Ladybird_improve_Faveo' => 'Enviar informes de falla de la aplicación para ayudar a Ladybird a mejorar Faveo',
+    'Send_app_crash_reports_to_help_Ladybird_improve_Faveo' => 'Enviar informes de falla de la aplicación para ayudar a Ladybird a mejorar PlataformaEscolar',
     'alert_&_notices_updated_successfully'                  => 'Alertas y avisos actualizados correctamente',
     'alert_&_notices_can_not_updated'                       => 'No se pueden actualizar alertas y avisos',
 
@@ -1175,9 +1176,9 @@ return [
       | Texto principal
       |-----------------------------------------------
      */
-    'copyright'           => 'Copyleft',
-    'all_rights_reserved' => 'All rights reserved',
-    'powered_by'          => 'Powered by',
+    'copyright'           => 'Copyright',
+    'all_rights_reserved' => 'Todos los derechos reservados',
+    'powered_by'          => 'Desarrollado por',
     /*
       |------------------------------------------------
       |Página de usuario invitado
@@ -1404,7 +1405,7 @@ Puede ingresar el número de días de registros de base de datos que se eliminar
      * |---------------------------------------------------------------------------------------
      * |API settings
      * |----------------------------------------------------------------------------------
-     * |The following lanuage line used to get english traslation of api settings in admin panel
+     * |Los siguientes líneas de lenguaje se usan en todos los asuntos relacionados con la configuración de la API para traducir
      * |
      * |
      */
@@ -1412,9 +1413,9 @@ Puede ingresar el número de días de registros de base de datos que se eliminar
     'enter_url_to_send_ticket_details' => 'Introduzca la URL para enviar los detalles del ticket',
     'api'                              => 'API',
     'api_key'                          => 'API key',
-    'api_key_mandatory'                => 'API key mandatory',
+    'api_key_mandatory'                => 'API key es obligatoria',
     'api_configurations'               => 'Configuraciones API',
-    'generate_key'                     => 'Generate key',
+    'generate_key'                     => 'Generar key',
     'api_settings'                     => 'Configuración de la API',
     /*
      * -----------------------------------------------------------------------------
@@ -1428,7 +1429,7 @@ Puede ingresar el número de días de registros de base de datos que se eliminar
     'not-authorised-error-debug'         => 'No está autorizado a acceder a la URL',
     'error-debug-settings'               => 'Configuración de errores y depuración',
     'debugging'                          => 'Modo de depuración',
-    'bugsnag-debugging'                  => 'Enviar informes de falla de la aplicación para ayudar a Ladybird a mejorar Faveo',
+    'bugsnag-debugging'                  => 'Enviar informes de falla de la aplicación para ayudar a PlataformaEscolar a mejorar PlataformaEscolar',
     'error-debug-settings-saved-message' => 'Su configuración de errores y depuración se han guardado correctamente',
     'error-debug-settings-error-message' => 'No ha realizado ningún cambio en la configuración.',
     'error-logs'                         => 'Registros de errores',
@@ -1467,11 +1468,11 @@ Puede ingresar el número de días de registros de base de datos que se eliminar
      * Social media integration
      * ---------------------------------------------------------------------------------------------------------
      */
-    'client_id'     => 'Client id',
-    'client_secret' => 'Client secret',
-    'redirect'      => 'Redirect URL',
-    'details'       => 'Details',
-    'social-media'  => 'Social media',
+    'client_id'     => 'Cliente id',
+    'client_secret' => 'Cliente secreto',
+    'redirect'      => 'URL de redireccionamiento',
+    'details'       => 'Detalles',
+    'social-media'  => 'Integración de redes sociales',
     /*     * ----------------------------------------------------------------------------------------------
      * Report
      * ----------------------------------------------------------------------------------------------
@@ -1610,60 +1611,60 @@ Puede ingresar el número de días de registros de base de datos que se eliminar
     //update 21-12-2016
     'selected-user-is-already-the-owner' => 'El usuario seleccionado ya es el propietario de este ticket.',
     //update 1-2-2017
-    'system-outgoing-incoming-mail-not-configured' => 'You have not configured system mail. Faveo can\'t fetch tickets from mail or send mail to users without it.',
-    'confihure-the-mail-now'                       => 'Click here to configure the mail.',
-    'system-mail-not-configured-agent-message'     => 'System incoming and outgoing email settings are not configured. Please contct the admin.',
+    'system-outgoing-incoming-mail-not-configured' => 'No has configurado el correo del sistema. PlataformaEscolar no puede recuperar tickets del correo ni enviar mensajes a los usuarios sin esta configuración.',
+    'confihure-the-mail-now'                       => 'Haz clic aquí para configurar el correo.',
+    'system-mail-not-configured-agent-message'     => 'No se ha configurado la configuración de correo electrónico entrante y saliente del sistema. Por favor, contacte al administrador.',
 
     // arindam-14.2.2017
     // sla
     'min'    => 'Min',
-    'hours'  => 'Hours',
-    'days'   => 'Days',
-    'months' => 'Months',
-    'year'   => 'Year',
+    'hours'  => 'Horas',
+    'days'   => 'Días',
+    'months' => 'Meses',
+    'year'   => 'Año',
     // department change
-    'change_department'                      => 'Change Department',
-    'ticket_department_successfully_changed' => 'Ticket Department Successfully Changed',
-    'select_another_department'              => 'Select another department',
+    'change_department'                      => 'Cambiar de departamento',
+    'ticket_department_successfully_changed' => 'Departamento del ticket modificado con éxito',
+    'select_another_department'              => 'Seleccione otro departamento',
 
     // status
     /**----------------------------------------------------------------
      * Status
      * ----------------------------------------------------------------
      */
-    'client'               => 'Client',
-    'send_email'           => 'Send Email',
-    'visibility_to_client' => 'Visibility to Client',
-    'purpose_of_status'    => 'Purpose of Status',
-    'status_to_display'    => 'Status to Display',
-    'icon_color'           => 'Icon color',
+    'client'               => 'Cliente',
+    'send_email'           => 'Enviar Correo',
+    'visibility_to_client' => 'Visibilidad para el Cliente',
+    'purpose_of_status'    => 'Propósito del Estado',
+    'status_to_display'    => 'Estado a Mostrar',
+    'icon_color'           => 'Color del Icono',
 
     /**--------------------------------------------------------------------------------------------
      * Status
      * --------------------------------------------------------------------------------------------
      */
-    'visible_to_client'                                                               => 'Visible to Client',
-    'icon'                                                                            => 'Icon',
-    'none'                                                                            => 'None',
-    'allow_client'                                                                    => 'Allow Client',
-    'if_yes_status_name_will_be_displayed'                                            => 'If yes status name will be displayed',
-    'if_yes_then_clients_can_choose_this_status'                                      => 'If yes then clients can choose this status',
-    'purpose_of_status_will_perform_the_action_to_be_applied_on_the_status_selection' => 'Purpose of status will perform the action to be applied on the status selection',
-    'this_message_will_be_displayed_in_the_thread_as_internal_note'                   => 'This message will be displayed in the thread as Internal note',
-    'make_system_default_for_selected_purpose'                                        => 'Make system default for Selected Purpose',
-    'this_status_will_be_displayed_to_client_if_visibility_of_client_chosen_no'       => 'This status will be displayed to client if visibility of client chosen no',
-    'tick_who_all_to_send_notification'                                               => 'Tick who all to send notification',
-    'Default'                                                                         => 'Default',
-    'unable_to_change_the_purpose_of_status_there_are_tickets_with_this_status'       => 'Unable to change the purpose of status. There are tickets with this status.',
-    'you_cannot_delete_a_default_ticket_status'                                       => 'You cannot delete a default Ticket Status',
-    'associated_tickets_moved_to_default_status'                                      => 'Associated tickets moved to default status',
-    'status_deleted_successfully'                                                     => 'Status Deleted Successfully',
-    'have_been_marked_as'                                                             => 'Tickets have been marked as ',
-    'have_been_deleted_forever'                                                       => 'Have been Deleted forever',
-    'related_tickets_moved_to_default_status'                                         => 'Related tickets moved to default status',
+    'visible_to_client'                                                               => 'Visible para el cliente',
+    'icon'                                                                            => 'Icono',
+    'none'                                                                            => 'Ninguno',
+    'allow_client'                                                                    => 'Permitir cliente',
+    'if_yes_status_name_will_be_displayed'                                            => 'Si es así, se mostrará el nombre del estado.',
+    'if_yes_then_clients_can_choose_this_status'                                      => 'Si es así, los clientes pueden elegir este estado',
+    'purpose_of_status_will_perform_the_action_to_be_applied_on_the_status_selection' => 'El propósito del estado ejecutará la acción a ser aplicada en la selección del estado',
+    'this_message_will_be_displayed_in_the_thread_as_internal_note'                   => 'Este mensaje se mostrará en el hilo como nota interna',
+    'make_system_default_for_selected_purpose'                                        => 'Hacer predeterminado del sistema para el propósito seleccionado',
+    'this_status_will_be_displayed_to_client_if_visibility_of_client_chosen_no'       => 'Este estado se mostrará al cliente si la visibilidad del cliente es elegida como no',
+    'tick_who_all_to_send_notification'                                               => 'Marque a quiénes enviar la notificación',
+    'Default'                                                                         => 'Por defecto',
+    'unable_to_change_the_purpose_of_status_there_are_tickets_with_this_status'       => 'No es posible cambiar el propósito del estado. Existen tickets con este estado.',
+    'you_cannot_delete_a_default_ticket_status'                                       => 'No puedes eliminar un estado de ticket predeterminado',
+    'associated_tickets_moved_to_default_status'                                      => 'Tickets asociados movidos al estado predeterminado',
+    'status_deleted_successfully'                                                     => 'Estado eliminado exitosamente',
+    'have_been_marked_as'                                                             => 'Las entradas se han marcado como ',
+    'have_been_deleted_forever'                                                       => 'Las entradas se han eliminado para siempre',
+    'related_tickets_moved_to_default_status'                                         => 'Tickets relacionados movidos al estado predeterminado',
 
     //updates 22-2-2017
-    'invalid-date-range' => 'Invalid date range',
+    'invalid-date-range' => 'Rango de fechas inválido',
     //updated 10-10-2023
     'what_should_be_done_with_content_owned_by_this_user' => '¿Qué se debe hacer con el contenido propiedad de este usuario',
 ];

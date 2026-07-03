@@ -41,6 +41,7 @@ return [
       |   Login Page
       |--------------------------------------
      */
+    'title_company_name'                 => 'SUPPORT CENTER',
     'login_to_start_your_session'        => 'Login to start your session',
     'login'                              => 'Login',
     'remember'                           => 'Remember me',

@@ -7,7 +7,7 @@
     if (isset($title->name)) {
         $title_name = $title->name;
     } else {
-        $title_name = "SUPPORT CENTER";
+        $title_name = Lang::get('lang.title_company_name');
     }
     ?>
     <title> @yield('title') {!! strip_tags($title_name) !!} </title>
