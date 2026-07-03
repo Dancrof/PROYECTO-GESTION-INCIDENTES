@@ -1386,7 +1386,7 @@ class TicketController extends Controller
                 $thread->ticket_id = $ticket->id;
                 $thread->user_id = Auth::user()->id;
                 $thread->is_internal = 1;
-                $thread->body = 'This Ticket has been assigned to '.$assignee;
+                $thread->body = 'Este ticket ha sido asignado a '.$assignee;
                 $thread->save();
             } elseif ($assign_to[0] == 'user') {
                 $ticket->assigned_to = $assign_to[1];
@@ -1408,7 +1408,7 @@ class TicketController extends Controller
                 $thread->ticket_id = $ticket->id;
                 $thread->user_id = Auth::user()->id;
                 $thread->is_internal = 1;
-                $thread->body = 'This Ticket has been assigned to '.$assignee;
+                $thread->body = 'Este ticket ha sido asignado a '.$assignee;
                 $thread->save();
 
                 $agent = $user_detail->first_name;
@@ -1466,7 +1466,7 @@ class TicketController extends Controller
     public function surrender($id)
     {
         $ticket = Tickets::where('id', '=', $id)->first();
-        $InternalContent = Auth::user()->first_name.' '.Auth::user()->last_name.' has Surrendered the assigned Ticket';
+        $InternalContent = Auth::user()->first_name.' '.Auth::user()->last_name.' ha entregado el ticket asignado';
         $thread = Ticket_Thread::where('ticket_id', '=', $id)->first();
         $NewThread = new Ticket_Thread();
         $NewThread->ticket_id = $thread->ticket_id;

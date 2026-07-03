@@ -762,7 +762,7 @@ return [
     'user_name'          => 'Nombre de usuario',
     'status'             => 'Status',
     'group'              => 'Grupo',
-    'department'         => 'Departmento',
+    'department'         => 'Departamento',
     'created'            => 'Creado',
     'lastlogin'          => 'Último acceso',
     'createagent'        => 'Crear un agente',
@@ -974,6 +974,7 @@ return [
     'unable_to_fetch_emails'                                             => 'No se pueden obtener correos electrónicos',
     'reply_content_is_a_required_field'                                  => 'El contenido de la respuesta es un campo obligatorio',
     'internal_content_is_a_required_field'                               => 'El contenido interno es un campo obligatorio',
+    'not-answered'                                                       => 'Sin contestar',
 
     /*
       |-----------------------------------------------

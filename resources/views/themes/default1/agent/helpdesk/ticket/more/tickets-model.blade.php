@@ -110,7 +110,7 @@
                                     <?php
                                     $teams        = App\Model\helpdesk\Agent\Teams::where('status', '=', '1')->where('team_lead', '!=', null)->get();
                                     $count_teams  = count($teams);
-                                    $assign       = App\User::where('role', '!=', 'user')->select('id', 'first_name', 'last_name')->where('active', '=', 1)->where('is_delete', '!=', 1)->where('ban', '!=', 1)->orderBy('first_name')->get();
+                                    $assign       = App\User::where('role', '!=', 'user')->select('id', 'first_name', 'last_name', 'email')->where('active', '=', 1)->where('is_delete', '!=', 1)->where('ban', '!=', 1)->orderBy('first_name')->get();
                                     $count_assign = count($assign);
                                     ?>
                                     <optgroup label="Teams ( {!! $count_teams !!} )">
@@ -118,9 +118,9 @@
                                         <option  value="team_{{$team->id}}">{!! $team->name !!}</option>
                                         @endforeach
                                     </optgroup>
-                                    <optgroup label="Agents ( {!! $count_assign !!} )">
+                                    <optgroup label="Agentes ( {!! $count_assign !!} )">
                                         @foreach($assign as $user)
-                                        <option  value="user_{{$user->id}}">{{$user->first_name." ".$user->last_name}}</option>
+                                        <option  value="user_{{$user->id}}">{{$user->first_name." ".$user->last_name." - ".$user->email}}</option>
                                         @endforeach
                                     </optgroup>
                                 </select>
