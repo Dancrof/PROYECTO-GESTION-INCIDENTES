@@ -1668,4 +1668,6 @@ Puede ingresar el número de días de registros de base de datos que se eliminar
     'invalid-date-range' => 'Rango de fechas inválido',
     //updated 10-10-2023
     'what_should_be_done_with_content_owned_by_this_user' => '¿Qué se debe hacer con el contenido propiedad de este usuario',
+    //updated 15-5-2017
+    'mail-sent-to-job-for-process'                        => 'El correo se ha enviado para su procesamiento; aparecerá en su buzón una vez que el servicio de cola seleccionado lo haya procesado. Si no recibe el correo, revise los registros en busca de errores o advertencias.'
 ];
